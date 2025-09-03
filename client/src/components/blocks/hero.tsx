@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
+import backgroundImage from "@assets/generated_images/Minimalist_business_background_76510443.png";
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -27,8 +28,21 @@ export default function Hero() {
   };
 
   return (
-    <Section className="relative bg-gradient-to-br from-background via-secondary/20 to-muted/30">
-      <Container>
+    <Section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-background/80"></div>
+      </div>
+      
+      <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <Heading level={1} center className="mb-6">
             Align your revenue ecosystem.{" "}

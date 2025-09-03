@@ -55,7 +55,6 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors" data-testid="footer-fractional">Fractional Services</a></li>
                 <li><button onClick={() => scrollToSection('solution')} className="hover:text-foreground transition-colors text-left" data-testid="footer-infrastructure">Revenue Infrastructure</button></li>
                 <li><button onClick={() => scrollToSection('solution')} className="hover:text-foreground transition-colors text-left" data-testid="footer-analytics">Analytics & BI</button></li>
                 <li><button onClick={() => scrollToSection('solution')} className="hover:text-foreground transition-colors text-left" data-testid="footer-strategy">Strategy & GTM</button></li>
@@ -67,7 +66,6 @@ export default function Footer() {
               <h4 className="font-semibold text-foreground mb-4">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li><a href="#" className="hover:text-foreground transition-colors" data-testid="footer-about">About Us</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors" data-testid="footer-careers">Careers</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors" data-testid="footer-blog">Blog</a></li>
                 <li><button onClick={() => scrollToSection('contact')} className="hover:text-foreground transition-colors text-left" data-testid="footer-contact">Contact</button></li>
               </ul>
@@ -77,7 +75,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="border-t border-border mt-12 pt-8 text-center">
             <p className="text-muted-foreground" data-testid="copyright">
-              © 2024 Simple Revenue. All rights reserved.
+              © 2025 Simple. All rights reserved.
             </p>
           </div>
         </div>

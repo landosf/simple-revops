@@ -45,7 +45,7 @@ export const solutionPillars = [
     title: "Revenue Tech Infrastructure",
     iconBg: "bg-primary/10",
     iconColor: "text-primary",
-    iconPath: "M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z",
+    iconPath: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z",
     features: [
       "CRM optimization and data quality",
       "Marketing and sales automation",
@@ -57,7 +57,7 @@ export const solutionPillars = [
     title: "Revenue Analytics & BI",
     iconBg: "bg-accent/10",
     iconColor: "text-accent",
-    iconPath: "M9 17V7l-5-5L4 2l5 5h10a2 2 0 012 2v8a2 2 0 01-2 2H9zM7 12l2 2 4-4",
+    iconPath: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z",
     features: [
       "Real-time revenue insights",
       "Custom executive dashboards", 
@@ -69,7 +69,7 @@ export const solutionPillars = [
     title: "Revenue Strategy & GTM",
     iconBg: "bg-emerald-500/10",
     iconColor: "text-emerald-500",
-    iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+    iconPath: "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.311-.06m0 0a15.032 15.032 0 01-2.448-2.448 14.9 14.9 0 01.311-.06",
     features: [
       "Strategic growth planning",
       "Funnel efficiency optimization",
