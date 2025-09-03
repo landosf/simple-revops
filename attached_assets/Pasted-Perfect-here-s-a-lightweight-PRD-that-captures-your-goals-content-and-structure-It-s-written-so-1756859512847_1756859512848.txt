@@ -1,0 +1,95 @@
+Perfect — here’s a lightweight PRD that captures your goals, content, and structure. It’s written so you can drop it straight into content/prd.md inside your repo (and evolve it as the site grows).
+
+⸻
+
+📑 Product Requirements Document (PRD)
+
+1. Vision
+
+Unify the revenue ecosystem under one clear, actionable roadmap. The site should highlight the cost of misalignment, demonstrate a structured solution, and convert interest into exploration calls.
+
+⸻
+
+2. Goals
+	•	Educate visitors on the revenue misalignment problem.
+	•	Showcase Simple’s solution framework (infrastructure, analytics, strategy).
+	•	Prove credibility with case studies/social proof.
+	•	Convert visitors into booked exploration calls via embedded Calendly.
+
+⸻
+
+3. Core Pages
+
+Home (one-page anchor scroll experience)
+	•	Hero Section: Clear, bold statement (“Align your revenue ecosystem. Drive measurable growth.”).
+	•	Problem Section:
+	•	Headline: “Revenue teams are misaligned, and it’s costing millions.”
+	•	Stats:
+	•	42% of B2B businesses cite low-quality leads as a significant challenge.
+	•	91% of sales teams missed quota last year.
+	•	Organizations with formal sales enablement saw win rates 15% higher (49%) than those without.
+	•	51% of orgs accurately forecast (vs AI-powered forecasting, 79%).
+	•	Silos grid:
+	•	Marketing vs. Sales → unqualified leads.
+	•	Sales vs. Customer Success → misaligned expectations → churn.
+	•	Customer Success vs. Finance → cost-cutting limits retention.
+	•	C-Suite vs. Teams → disjointed KPIs, missed synergy.
+	•	Solution Section: Three pillars with supporting bullets.
+	1.	Revenue Tech Infrastructure → CRM optimization, data quality, automation, AI.
+	2.	Revenue Analytics & BI → insights, dashboards, forecasting.
+	3.	Revenue Strategy & GTM → growth planning, funnel efficiency, ICP/priority scoring, cross-functional alignment.
+	•	Case Studies Section:
+	•	Shastic case study: 126% pipeline boost + 95% increase in MQLs in 8 months.
+	•	CTA Section:
+	•	Headline: “Ready to unify your revenue ecosystem?”
+	•	Embedded Calendly calendar (30 min exploration call).
+	•	Button → “Schedule Now.”
+
+⸻
+
+Other Pages (simple scaffolding to start)
+	•	Fractional Services → Placeholder (content coming).
+	•	About Us → Team vision, mission, credibility.
+	•	Careers → Open roles, culture.
+	•	Blog → Insights and thought leadership (scaffold with MDX or CMS integration later).
+
+⸻
+
+4. Components Needed
+	•	Layout → Navbar, Footer, Global metadata.
+	•	UI Primitives (reusable):
+	•	Button (primary, secondary).
+	•	Section (padding, background, responsive grid).
+	•	Heading (variants: h1, h2, h3).
+	•	Card (for stats, case studies).
+	•	Blocks (marketing sections):
+	•	Hero
+	•	Problem (stats + silos grid)
+	•	Solution (3-column grid)
+	•	Case Study
+	•	CTA with Calendly
+
+⸻
+
+5. KPIs
+	•	Exploration calls booked (Calendly conversions).
+	•	Page-to-CTA conversion % (scroll depth to CTA clicks).
+	•	Bounce rate on home page.
+	•	Engagement with case studies (time on section).
+
+⸻
+
+6. Technical Notes
+	•	Framework: Next.js (App Router).
+	•	Styling: TailwindCSS + shadcn/ui.
+	•	Hosting: Vercel (with Edge optimizations).
+	•	Content: Keep in /content/ (JSON or MDX) for easy updates.
+	•	Calendly integration: <iframe> embed in CTA section.
+
+⸻
+
+✅ This PRD keeps everything one-page for core content, while scaffolding additional pages for growth.
+
+⸻
+
+Do you want me to now map this PRD directly to a page layout wireframe (e.g., a block-by-block visual outline you can hand to Replit and start coding with Section components)?

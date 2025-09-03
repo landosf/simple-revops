@@ -1,0 +1,96 @@
+
+⸻
+
+Block Details
+
+1. Navbar
+	•	Left: Logo (text or SVG).
+	•	Right: Anchor links → scroll to sections (#problem, #solution, #case-studies, #contact).
+	•	Sticky with subtle shadow.
+
+⸻
+
+2. Hero Block
+	•	Heading (H1):
+Align your revenue ecosystem. Drive measurable growth.
+	•	Subtext:
+Short sentence about solving misalignment across sales, marketing, CS, and finance.
+	•	Primary CTA button → scroll to Calendly embed.
+	•	Background: light or gradient.
+
+⸻
+
+3. Problem Block
+	•	Heading (H2): Revenue teams are misaligned, and it’s costing millions.
+	•	Stats Grid (2x2):
+	•	42% → low-quality leads.
+	•	91% → missed quota.
+	•	15% win rate lift → with sales enablement.
+	•	51% vs 79% → forecasting gap.
+	•	Silos Grid (2 columns):
+	•	Marketing vs Sales → unqualified leads.
+	•	Sales vs CS → churn from misaligned expectations.
+	•	CS vs Finance → cost-cutting hurts retention.
+	•	C-Suite vs Teams → disjointed KPIs.
+
+⸻
+
+4. Solution Block
+	•	Heading (H2): The Solution
+	•	3-Pillar Grid (responsive):
+	1.	Revenue Tech Infrastructure
+	2.	Revenue Analytics & BI
+	3.	Revenue Strategy & GTM
+	•	Each pillar gets sub-bullets from PRD.
+
+⸻
+
+5. Case Studies Block
+	•	Heading (H2): Proven Results
+	•	Card:
+	•	Logo or placeholder for Shastic.
+	•	Headline: 126% pipeline boost, 95% increase in MQLs.
+	•	Subtext: Story of fragmented data → centralized → scalable revenue.
+	•	CTA link → Contact section.
+
+⸻
+
+6. CTA Block
+	•	Heading (H2): Ready to unify your revenue ecosystem?
+	•	Calendly embed (iframe, 100% width).
+	•	Fallback Button → “Schedule Now.”
+	•	Centered, contrasting background (blue or dark).
+
+⸻
+
+7. Footer
+	•	Links: Home, Fractional Services, About Us, Careers, Blog.
+	•	Socials: LinkedIn, Twitter/X (icons).
+	•	Small copyright line.
+
+⸻
+
+📂 Component Breakdown
+	•	components/layout/
+	•	navbar.tsx
+	•	footer.tsx
+	•	components/blocks/
+	•	hero.tsx
+	•	problem.tsx
+	•	solution.tsx
+	•	case-studies.tsx
+	•	cta.tsx
+	•	components/ui/
+	•	button.tsx
+	•	card.tsx
+	•	section.tsx
+	•	heading.tsx
+	•	container.tsx
+
+⸻
+
+✅ This gives you a direct 1:1 mapping from PRD → code architecture → components. You can now scaffold quickly in Replit.
+
+⸻
+
+Do you want me to sketch the first set of reusable UI primitives (Section, Heading, Button) in Tailwind/React, so you can drop them in and immediately start building these blocks?
