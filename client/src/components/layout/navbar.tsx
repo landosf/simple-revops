@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,34 +48,42 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('problem')}
+              {/* Services Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium flex items-center" data-testid="nav-services">
+                  Services
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-infrastructure">
+                    Revenue Infrastructure
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-analytics">
+                    Analytics & BI
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-strategy">
+                    Strategy & GTM
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
+              <a 
+                href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-problem"
+                data-testid="nav-company"
               >
-                Problem
-              </button>
-              <button 
-                onClick={() => scrollToSection('solution')}
+                Company
+              </a>
+              
+              <a 
+                href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-solution"
+                data-testid="nav-blog"
               >
-                Solution
-              </button>
-              <button 
-                onClick={() => scrollToSection('case-studies')}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-case-studies"
-              >
-                Case Studies
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-contact"
-              >
-                Contact
-              </button>
+                Blog
+              </a>
             </div>
           </div>
           
