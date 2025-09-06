@@ -6,43 +6,83 @@ export default function CTA() {
   return (
     <Section background="gradient">
       <div className="text-center">
+        <div className="bg-yellow-400 text-black px-4 py-2 rounded-full inline-block mb-6 font-bold">
+          ⚠️ LIMITED TIME: Revenue Audit Normally $5K - FREE This Month
+        </div>
+        
         <Heading level={2} className="text-white mb-6">
-          Ready to unify your revenue ecosystem?
+          Get Your Revenue Recovery Plan
+          <span className="block text-yellow-300">Worth $500K+ in Found Revenue</span>
         </Heading>
-        <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
-          Book a 30-minute exploration call to discover how we can align your teams, 
-          optimize your tech stack, and drive measurable growth.
+        
+        <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          <strong>30-minute call reveals:</strong> Your biggest revenue leaks, 
+          the #1 quick win worth $50K+, and your 90-day recovery roadmap.
         </p>
         
-        <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
-          <div className="text-center mb-6">
-            <svg className="w-16 h-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <Heading level={3} className="mb-2">Schedule Your Call</Heading>
-            <p className="text-gray-600 mb-6">
-              Choose a time that works for you. We'll discuss your specific challenges and opportunities.
-            </p>
-          </div>
-          
-          <Button size="lg" className="w-full mb-4">
-            Book 30-Minute Exploration Call
-          </Button>
-          
-          <div className="text-sm text-gray-500 mb-6">
-            No sales pressure. Just insights and actionable next steps.
-          </div>
-          
-          <div className="border-t border-gray-200 pt-6">
-            <p className="text-gray-600 mb-4">Prefer to reach out directly?</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:hello@simplerevenue.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                hello@simplerevenue.com
-              </a>
-              <a href="tel:+15551234567" className="text-blue-600 hover:text-blue-800 font-medium">
-                (555) 123-4567
-              </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-4xl mx-auto">
+          {[
+            { icon: "🔍", title: "Revenue Leak Audit", desc: "Find your $50K+ monthly waste" },
+            { icon: "🎯", title: "Quick Win Identified", desc: "30-day action for immediate ROI" },
+            { icon: "📈", title: "90-Day Growth Plan", desc: "Your roadmap to $500K+ recovery" }
+          ].map((item, index) => (
+            <div key={index} className="bg-white/10 rounded-xl p-6 text-center">
+              <div className="text-4xl mb-3">{item.icon}</div>
+              <h3 className="text-white font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-300 text-sm">{item.desc}</p>
             </div>
+          ))}
+        </div>
+        
+        <div className="bg-white rounded-2xl p-8 max-w-md mx-auto">
+          <div className="text-center mb-6">
+            <div className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold mb-4">
+              🔥 Only 3 Spots Left This Month
+            </div>
+            <Heading level={3} className="mb-2">Book Your Free Audit</Heading>
+            <p className="text-gray-600">Usually $5,000 - FREE for qualified companies</p>
+          </div>
+          
+          {/* Calendly placeholder with urgency */}
+          <div className="border-2 border-red-300 rounded-xl p-6 bg-red-50 mb-6">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p className="text-red-800 font-semibold mb-4">
+                Replace with Calendly iframe:<br/>
+                <code className="bg-white px-2 py-1 rounded text-xs block mt-2">
+                  &lt;iframe src="your-calendly-url"&gt;&lt;/iframe&gt;
+                </code>
+              </p>
+              <Button className="bg-red-600 hover:bg-red-700 text-white w-full" data-testid="button-claim-audit">
+                Claim Your Free Audit Now →
+              </Button>
+            </div>
+          </div>
+          
+          <div className="text-center text-sm text-gray-500 space-y-1">
+            <p>✓ No commitment required</p>
+            <p>✓ 100% confidential</p>
+            <p>✓ Immediate actionable insights</p>
+          </div>
+        </div>
+
+        {/* Trust Signals */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="text-center text-white/80">
+            <div className="text-3xl font-bold text-yellow-300 mb-2">50+</div>
+            <p className="text-sm">Companies Already Recovered $47M+</p>
+          </div>
+          <div className="text-center text-white/80">
+            <div className="text-3xl font-bold text-yellow-300 mb-2">89%</div>
+            <p className="text-sm">Hit Growth Targets in 90 Days</p>
+          </div>
+          <div className="text-center text-white/80">
+            <div className="text-3xl font-bold text-yellow-300 mb-2">45</div>
+            <p className="text-sm">Days Average ROI Payback</p>
           </div>
         </div>
       </div>
