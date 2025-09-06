@@ -11,14 +11,21 @@ export default function CTA() {
   };
 
   return (
-    <Section id="contact" background="primary">
+    <Section id="contact" className="bg-gradient-to-br from-blue-600 via-purple-700 to-blue-800">
       <Container>
-        <div className="max-w-4xl mx-auto text-center">
-          <Heading level={2} center className="text-primary-foreground mb-6">
-            Ready to unify your revenue ecosystem?
+        <div className="text-center">
+          <div className="bg-yellow-400 text-black px-4 py-2 rounded-full inline-block mb-6 font-bold">
+            ⚠️ LIMITED TIME: Revenue Audit Normally $5K - FREE This Month
+          </div>
+          
+          <Heading level={2} className="text-white mb-6">
+            Get Your Revenue Recovery Plan
+            <span className="block text-yellow-300">Worth $500K+ in Found Revenue</span>
           </Heading>
-          <p className="text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
-            Schedule a 30-minute exploration call to discover how we can align your teams and accelerate growth.
+          
+          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            <strong>30-minute call reveals:</strong> Your biggest revenue leaks, 
+            the #1 quick win worth $50K+, and your 90-day recovery roadmap.
           </p>
           
           {/* Calendly Embed Container */}

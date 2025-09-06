@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/container";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -40,14 +41,25 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold gradient-text" data-testid="logo">
-              Simple Revenue
-            </span>
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-2xl font-bold gradient-text" 
+              data-testid="logo"
+            >
+              Simple
+            </button>
           </div>
           
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
+              <button 
+                onClick={() => scrollToSection('hero')} 
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+              >
+                Home
+              </button>
+              
               {/* Services Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium flex items-center" data-testid="nav-services">
@@ -57,33 +69,42 @@ export default function Navbar() {
                   </svg>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-infrastructure">
-                    Revenue Infrastructure
+                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-recovery">
+                    90-Day Recovery
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-analytics">
-                    Analytics & BI
+                  <DropdownMenuItem onClick={() => scrollToSection('problem')} data-testid="dropdown-diagnostic">
+                    Revenue Diagnostic
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => scrollToSection('solution')} data-testid="dropdown-strategy">
-                    Strategy & GTM
+                  <DropdownMenuItem onClick={() => scrollToSection('case-studies')} data-testid="dropdown-cases">
+                    Case Studies
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               
-              <a 
-                href="#"
+              <button 
+                onClick={() => scrollToSection('case-studies')}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-company"
+                data-testid="nav-results"
               >
-                Company
-              </a>
+                Results
+              </button>
               
-              <a 
-                href="#"
+              <button 
+                onClick={() => scrollToSection('contact')}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-                data-testid="nav-blog"
+                data-testid="nav-contact"
               >
-                Blog
-              </a>
+                Contact
+              </button>
+              
+              <Button 
+                size="sm" 
+                onClick={() => scrollToSection('contact')}
+                className="animate-pulse bg-red-600 hover:bg-red-700 text-white" 
+                data-testid="navbar-cta"
+              >
+                Free Revenue Audit →
+              </Button>
             </div>
           </div>
           
