@@ -1,0 +1,738 @@
+# Simple Revenue Website - Replit Implementation Package
+
+## 🚀 Quick Start Instructions
+
+1. **Create a new Next.js Repl** in Replit
+1. **Copy the files below** into your project structure
+1. **Install dependencies**: `npm install`
+1. **Run the development server**: `npm run dev`
+
+-----
+
+## 📁 Project Structure
+
+```
+simple-revenue-website/
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── app/
+│   ├── layout.js
+│   ├── page.js
+│   ├── globals.css
+│   ├── services/
+│   │   ├── infrastructure/
+│   │   │   └── page.js
+│   │   ├── analytics/
+│   │   │   └── page.js
+│   │   └── strategy/
+│   │       └── page.js
+│   ├── company/
+│   │   └── page.js
+│   └── blog/
+│       └── page.js
+├── components/
+│   ├── ui/
+│   │   ├── Button.js
+│   │   ├── Card.js
+│   │   ├── Section.js
+│   │   └── Heading.js
+│   └── blocks/
+│       ├── Hero.js
+│       ├── Problem.js
+│       ├── Solution.js
+│       ├── CaseStudies.js
+│       ├── CTA.js
+│       └── Navbar.js
+└── content/
+    └── data.json
+```
+
+-----
+
+## 📄 File Contents
+
+### `package.json`
+
+```json
+{
+  "name": "simple-revenue-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}
+```
+
+### `next.config.js`
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+module.exports = nextConfig
+```
+
+### `tailwind.config.js`
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'bounce-slow': 'bounce 2s infinite',
+      }
+    },
+  },
+  plugins: [],
+}
+```
+
+### `postcss.config.js`
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+### `app/globals.css`
+
+```css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .service-card {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .feature-card {
+    @apply bg-white border-l-4 border-blue-600 rounded-xl transition-all duration-300 hover:shadow-lg hover:border-blue-800;
+  }
+  
+  .stat-card {
+    @apply bg-white border border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300;
+  }
+}
+```
+
+### `app/layout.js`
+
+```jsx
+import './globals.css'
+
+export const metadata = {
+  title: 'Simple - Unify Your Revenue Ecosystem',
+  description: 'Align your revenue ecosystem and drive measurable growth with our proven infrastructure, analytics, and strategy framework.',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+### `app/page.js`
+
+```jsx
+import Navbar from '@/components/blocks/Navbar'
+import Hero from '@/components/blocks/Hero'
+import Problem from '@/components/blocks/Problem'
+import Solution from '@/components/blocks/Solution'
+import CaseStudies from '@/components/blocks/CaseStudies'
+import CTA from '@/components/blocks/CTA'
+import Footer from '@/components/blocks/Footer'
+
+export default function HomePage() {
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Problem />
+      <Solution />
+      <CaseStudies />
+      <CTA />
+      <Footer />
+    </main>
+  )
+}
+```
+
+### `components/ui/Button.js`
+
+```jsx
+export default function Button({ 
+  children, 
+  variant = 'primary', 
+  size = 'md', 
+  className = '', 
+  ...props 
+}) {
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300'
+  
+  const variants = {
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    text: 'text-blue-600 hover:text-blue-800'
+  }
+  
+  const sizes = {
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-6 py-3',
+    lg: 'px-8 py-4 text-lg'
+  }
+  
+  return (
+    <button 
+      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+```
+
+### `components/ui/Card.js`
+
+```jsx
+export default function Card({ 
+  children, 
+  variant = 'default', 
+  className = '', 
+  ...props 
+}) {
+  const variants = {
+    default: 'bg-white border border-gray-200 rounded-xl p-6',
+    service: 'service-card p-8',
+    feature: 'feature-card p-8',
+    stat: 'stat-card p-6 text-center'
+  }
+  
+  return (
+    <div className={`${variants[variant]} ${className}`} {...props}>
+      {children}
+    </div>
+  )
+}
+```
+
+### `components/ui/Section.js`
+
+```jsx
+export default function Section({ 
+  children, 
+  className = '', 
+  background = 'white',
+  padding = 'default',
+  ...props 
+}) {
+  const backgrounds = {
+    white: 'bg-white',
+    gray: 'bg-gray-50',
+    gradient: 'gradient-bg'
+  }
+  
+  const paddings = {
+    default: 'py-20',
+    large: 'py-24',
+    small: 'py-12'
+  }
+  
+  return (
+    <section className={`${backgrounds[background]} ${paddings[padding]} ${className}`} {...props}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {children}
+      </div>
+    </section>
+  )
+}
+```
+
+### `components/ui/Heading.js`
+
+```jsx
+export default function Heading({ 
+  children, 
+  level = 1, 
+  className = '',
+  gradient = false,
+  ...props 
+}) {
+  const Tag = `h${level}`
+  
+  const sizes = {
+    1: 'text-4xl md:text-5xl lg:text-6xl font-bold',
+    2: 'text-3xl md:text-4xl lg:text-5xl font-bold',
+    3: 'text-2xl md:text-3xl font-bold',
+    4: 'text-xl md:text-2xl font-bold',
+    5: 'text-lg md:text-xl font-semibold',
+    6: 'text-base md:text-lg font-semibold'
+  }
+  
+  const gradientClass = gradient ? 'bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent' : 'text-gray-900'
+  
+  return (
+    <Tag className={`${sizes[level]} ${gradientClass} ${className}`} {...props}>
+      {children}
+    </Tag>
+  )
+}
+```
+
+### `components/blocks/Navbar.js`
+
+```jsx
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+import Button from '@/components/ui/Button'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent">
+            Simple
+          </Link>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Home</Link>
+            
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 transition-colors">
+                Services
+              </button>
+              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-1">
+                  <Link href="/services/infrastructure" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Infrastructure</Link>
+                  <Link href="/services/analytics" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytics</Link>
+                  <Link href="/services/strategy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Strategy</Link>
+                </div>
+              </div>
+            </div>
+            
+            <Link href="/company" className="text-gray-700 hover:text-blue-600 transition-colors">Company</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">Blog</Link>
+            <Button size="sm">Book a Call</Button>
+          </div>
+
+          <button 
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        
+        {isOpen && (
+          <div className="md:hidden py-4 border-t border-gray-100">
+            <div className="flex flex-col space-y-4">
+              <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
+              <Link href="/services/infrastructure" className="text-gray-700 hover:text-blue-600">Infrastructure</Link>
+              <Link href="/services/analytics" className="text-gray-700 hover:text-blue-600">Analytics</Link>
+              <Link href="/services/strategy" className="text-gray-700 hover:text-blue-600">Strategy</Link>
+              <Link href="/company" className="text-gray-700 hover:text-blue-600">Company</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600">Blog</Link>
+              <Button className="w-fit">Book a Call</Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  )
+}
+```
+
+### `components/blocks/Hero.js`
+
+```jsx
+import Button from '@/components/ui/Button'
+import Section from '@/components/ui/Section'
+import Heading from '@/components/ui/Heading'
+
+export default function Hero() {
+  return (
+    <Section background="gradient" className="pt-20">
+      <div className="text-center">
+        <Heading level={1} className="text-white mb-6 leading-tight">
+          Align your revenue ecosystem.<br/>
+          <span className="text-yellow-300">Drive measurable growth.</span>
+        </Heading>
+        <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto leading-relaxed">
+          Stop losing millions to misaligned revenue teams. We unify your entire revenue ecosystem 
+          with infrastructure, analytics, and strategy that actually works.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-50">
+            Schedule Exploration Call
+          </Button>
+          <Button variant="secondary" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
+            See the Problem
+          </Button>
+        </div>
+        <div className="animate-bounce-slow">
+          <div className="w-6 h-10 border-2 border-white rounded-full mx-auto flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Problem.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Problem() {
+  const stats = [
+    { value: '42%', label: 'of B2B businesses cite low-quality leads as a significant challenge', color: 'text-red-600' },
+    { value: '91%', label: 'of sales teams missed quota last year', color: 'text-red-600' },
+    { value: '15%', label: 'higher win rates with formal sales enablement', color: 'text-green-600' },
+    { value: '79%', label: 'accuracy with AI-powered forecasting vs 51% traditional', color: 'text-blue-600' }
+  ]
+
+  const silos = [
+    { title: 'Marketing vs. Sales', description: 'Unqualified leads waste sales time and budget, creating friction and missed targets.' },
+    { title: 'Sales vs. Customer Success', description: 'Misaligned expectations lead to poor handoffs, dissatisfied customers, and churn.' },
+    { title: 'Customer Success vs. Finance', description: 'Cost-cutting limits retention investments, reducing LTV and growth potential.' },
+    { title: 'C-Suite vs. Teams', description: 'Disjointed KPIs prevent teams from working toward unified revenue goals.' }
+  ]
+
+  return (
+    <Section background="gray">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-6">
+          Revenue teams are misaligned, and it's <span className="text-red-600">costing millions</span>
+        </Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          The data doesn't lie. Disconnected revenue teams are bleeding money across every stage of the customer journey.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        {stats.map((stat, index) => (
+          <Card key={index} variant="stat">
+            <div className={`text-4xl font-bold mb-2 ${stat.color}`}>{stat.value}</div>
+            <p className="text-gray-700 font-medium">{stat.label}</p>
+          </Card>
+        ))}
+      </div>
+
+      <div className="mb-16">
+        <Heading level={3} className="text-center mb-12">The Cost of Silos</Heading>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {silos.map((silo, index) => (
+            <div key={index} className="bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-8 rounded-xl">
+              <h4 className="text-xl font-bold text-amber-900 mb-4">{silo.title}</h4>
+              <p className="text-amber-800">{silo.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Solution.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Solution() {
+  const pillars = [
+    {
+      title: 'Revenue Tech Infrastructure',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      ),
+      features: [
+        'CRM optimization and data quality audits',
+        'Revenue automation workflows',
+        'AI-powered lead scoring and routing',
+        'Integration architecture planning'
+      ]
+    },
+    {
+      title: 'Revenue Analytics & BI',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      features: [
+        'Real-time revenue dashboards',
+        'Predictive forecasting models',
+        'Attribution and ROI tracking',
+        'Cross-functional KPI alignment'
+      ]
+    },
+    {
+      title: 'Revenue Strategy & GTM',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      features: [
+        'ICP refinement and priority scoring',
+        'Funnel optimization and efficiency',
+        'Cross-functional alignment workshops',
+        'Growth planning and execution'
+      ]
+    }
+  ]
+
+  return (
+    <Section>
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-6">
+          Three pillars to <span className="text-blue-600">unify your revenue</span>
+        </Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our proven framework aligns every revenue touchpoint, turning silos into a synchronized growth engine.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {pillars.map((pillar, index) => (
+          <Card key={index} className="bg-gradient-to-br from-blue-50 to-blue-100 border-t-4 border-blue-500 p-10 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="w-16 h-16 bg-blue-500 rounded-xl mb-6 flex items-center justify-center">
+              {pillar.icon}
+            </div>
+            <Heading level={3} className="mb-4">{pillar.title}</Heading>
+            <ul className="text-gray-600 space-y-3">
+              {pillar.features.map((feature, featureIndex) => (
+                <li key={featureIndex} className="flex items-start">
+                  <span className="text-blue-500 mr-3 mt-1">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/CaseStudies.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function CaseStudies() {
+  return (
+    <Section background="gray">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-6">
+          Real results from <span className="text-green-600">real clients</span>
+        </Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          See how we've transformed revenue ecosystems for companies like yours.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="bg-gradient-to-br from-green-50 to-green-100 border-l-6 border-green-500 p-10 rounded-2xl">
+          <div className="mb-6">
+            <Heading level={3} className="mb-2">Shastic</Heading>
+            <p className="text-gray-600">B2B SaaS Platform</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">126%</div>
+              <p className="text-gray-700 font-medium">Pipeline Boost</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">95%</div>
+              <p className="text-gray-700 font-medium">Increase in MQLs</p>
+            </div>
+          </div>
+          
+          <p className="text-gray-700 mb-6">
+            In just 8 months, we unified Shastic's fragmented revenue operations, implemented AI-powered 
+            lead scoring, and aligned their sales and marketing teams around shared KPIs.
+          </p>
+          
+          <div className="text-sm text-gray-500 font-medium">
+            Timeline: 8 months | Industry: B2B SaaS
+          </div>
+        </Card>
+
+        <Card className="bg-gradient-to-br from-green-50 to-green-100 border-l-6 border-green-500 p-10 rounded-2xl opacity-60">
+          <div className="mb-6">
+            <Heading level={3} className="mb-2">Coming Soon</Heading>
+            <p className="text-gray-600">Enterprise Software</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">240%</div>
+              <p className="text-gray-700 font-medium">Revenue Growth</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">65%</div>
+              <p className="text-gray-700 font-medium">Faster Sales Cycle</p>
+            </div>
+          </div>
+          
+          <p className="text-gray-700 mb-6">
+            Complete revenue ecosystem transformation including CRM migration, predictive analytics 
+            implementation, and cross-functional alignment workshops.
+          </p>
+          
+          <div className="text-sm text-gray-500 font-medium">
+            Timeline: 12 months | Industry: Enterprise Software
+          </div>
+        </Card>
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/CTA.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Button from '@/components/ui/Button'
+import Heading from '@/components/ui/Heading'
+
+export default function CTA() {
+  return (
+    <Section background="gradient">
+      <div className="text-center">
+        <Heading level={2} className="text-white mb-6">
+          Ready to unify your revenue ecosystem?
+        </Heading>
+        <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Book a 30-minute exploration call to discover how we can align your teams, 
+          optimize your tech stack, and drive measurable growth.
+        </p>
+        
+        <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center">
+            <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <Heading level={3} className="mb-2">Calendly Integration</Heading>
+            <p className="text-gray-600 mb-4">
+              Replace this placeholder with your Calendly embed:<br/>
+              <code className="bg-gray-100 px-2 py-1 rounded text-sm text-red-600">
+                &lt;iframe src="your-calendly-url"&gt;
+              </code>
+            </p>
+            <Button>Schedule Now</Button>
+          </div>
+        </div>
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Footer.js`
+
+```jsx
+import Link from 'next/link'
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="col-span-1 md:col-span-2">
+            <div className="text-2xl font-bold mb-4">Simple</div>
+            <p className="text-gray-400 mb-6 max-w-md">
+              Unifying revenue ecosystems with infrastructure, analytics, and strategy that drives measurable growth.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <span className="sr-only">Twitter</span>
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.
+```
