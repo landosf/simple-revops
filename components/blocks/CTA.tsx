@@ -33,7 +33,7 @@ export default function CTA() {
               { icon: "🎯", title: "Quick Win Identified", desc: "30-day action for immediate ROI" },
               { icon: "📈", title: "90-Day Growth Plan", desc: "Your roadmap to $500K+ recovery" }
             ].map((item, index) => (
-              <div key={index} className="bg-white/10 rounded-xl p-6 text-center backdrop-blur">
+              <div key={index} className="bg-white/10 rounded-xl p-6 text-center backdrop-blur" data-testid={`value-prop-${index}`}>
                 <div className="text-4xl mb-3">{item.icon}</div>
                 <h3 className="text-white font-bold mb-2">{item.title}</h3>
                 <p className="text-gray-300 text-sm text-balance">{item.desc}</p>
@@ -44,7 +44,7 @@ export default function CTA() {
           {/* Booking Widget */}
           <div className="bg-white rounded-2xl p-8 max-w-lg mx-auto mb-12 shadow-2xl">
             <div className="text-center mb-6">
-              <div className="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block">
+              <div className="bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block border border-yellow-300" data-testid="urgency-badge">
                 🔥 Only 3 Spots Left This Month
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Book Your Free Audit</h3>
@@ -52,22 +52,23 @@ export default function CTA() {
             </div>
             
             {/* Calendly Placeholder */}
-            <div className="border-2 border-red-300 rounded-xl p-8 bg-red-50 mb-6">
+            <div className="border-2 border-blue-300 rounded-xl p-8 bg-gradient-to-r from-blue-50 to-purple-50 mb-6" data-testid="booking-widget">
               <div className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <p className="text-red-800 font-semibold mb-6">
+                <p className="text-blue-800 font-semibold mb-6">
                   Replace with Calendly iframe:<br/>
-                  <code className="bg-white px-2 py-1 rounded text-xs block mt-2">
+                  <code className="bg-white px-2 py-1 rounded text-xs block mt-2 border border-blue-200">
                     &lt;iframe src="your-calendly-url"&gt;&lt;/iframe&gt;
                   </code>
                 </p>
                 <button 
                   onClick={openCalendly}
-                  className="btn-cta w-full text-lg py-4"
+                  className="btn-primary w-full text-lg py-4 shadow-lg"
+                  data-testid="button-claim-audit"
                 >
                   Claim Your Free Audit Now →
                 </button>
@@ -89,8 +90,8 @@ export default function CTA() {
               { number: '89%', label: 'Hit Growth Targets in 90 Days' },
               { number: '45', label: 'Days Average ROI Payback' }
             ].map((stat, index) => (
-              <div key={index} className="text-center text-white/80">
-                <div className="text-3xl font-bold text-yellow-300 mb-2">{stat.number}</div>
+              <div key={index} className="text-center text-white/80" data-testid={`trust-signal-${index}`}>
+                <div className="text-3xl font-bold gradient-text mb-2">{stat.number}</div>
                 <p className="text-sm text-balance">{stat.label}</p>
               </div>
             ))}
