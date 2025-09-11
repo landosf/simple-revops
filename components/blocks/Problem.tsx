@@ -122,7 +122,7 @@ export default function Problem() {
               },
               { 
                 value: '65%', 
-                label: 'of revenue leaders can\\'t forecast accurately', 
+                label: 'of revenue leaders can\'t forecast accurately', 
                 sublabel: 'Leading to 40% budget waste',
                 color: 'text-red-600'
               },
