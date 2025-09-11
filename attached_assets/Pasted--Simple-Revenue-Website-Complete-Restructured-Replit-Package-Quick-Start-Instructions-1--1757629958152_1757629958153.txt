@@ -1,0 +1,770 @@
+# Simple Revenue Website - Complete Restructured Replit Package
+
+## 🚀 Quick Start Instructions
+
+1. **Create a new Next.js Repl** in Replit
+1. **Copy all files below** into your project structure exactly as shown
+1. **Install dependencies**: `npm install`
+1. **Run the development server**: `npm run dev`
+
+-----
+
+## 📁 Project Structure
+
+```
+simple-revenue-website/
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── app/
+│   ├── layout.js
+│   ├── page.js
+│   ├── globals.css
+│   ├── services/
+│   │   └── page.js
+│   ├── company/
+│   │   └── page.js
+│   └── book-strategy-call/
+│       └── page.js
+├── components/
+│   ├── ui/
+│   │   ├── Button.js
+│   │   ├── Card.js
+│   │   ├── Section.js
+│   │   └── Heading.js
+│   └── blocks/
+│       ├── Navbar.js
+│       ├── Footer.js
+│       ├── Hero.js
+│       ├── Features.js
+│       ├── Process.js
+│       ├── Results.js
+│       ├── Testimonials.js
+│       └── CTA.js
+└── public/
+    └── favicon.ico
+```
+
+-----
+
+## 📄 Complete File Contents
+
+### `package.json`
+
+```json
+{
+  "name": "simple-revenue-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}
+```
+
+### `next.config.js`
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+module.exports = nextConfig
+```
+
+### `tailwind.config.js`
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+        }
+      },
+      animation: {
+        'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in-up': 'fadeInUp 0.6s ease-out',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        }
+      }
+    },
+  },
+  plugins: [],
+}
+```
+
+### `postcss.config.js`
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+### `app/globals.css`
+
+```css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply border border-gray-300 hover:border-primary-500 text-gray-700 hover:text-primary-600 px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-white hover:bg-primary-50;
+  }
+  
+  .btn-pulse {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold animate-pulse-slow shadow-lg;
+  }
+}
+```
+
+### `app/layout.js`
+
+```jsx
+import './globals.css'
+
+export const metadata = {
+  title: 'Simple - Revenue Operations Excellence | Drive Predictable Growth',
+  description: 'Transform your revenue operations with our proven methodology. Align sales, marketing, and customer success teams for predictable, scalable growth.',
+  keywords: 'revenue operations, sales alignment, revenue growth, B2B consulting',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className="antialiased">{children}</body>
+    </html>
+  )
+}
+```
+
+### `app/page.js`
+
+```jsx
+import Navbar from '@/components/blocks/Navbar'
+import Hero from '@/components/blocks/Hero'
+import Features from '@/components/blocks/Features'
+import Process from '@/components/blocks/Process'
+import Results from '@/components/blocks/Results'
+import Testimonials from '@/components/blocks/Testimonials'
+import CTA from '@/components/blocks/CTA'
+import Footer from '@/components/blocks/Footer'
+
+export default function HomePage() {
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Process />
+      <Results />
+      <Testimonials />
+      <CTA />
+      <Footer />
+    </main>
+  )
+}
+```
+
+### `components/ui/Button.js`
+
+```jsx
+export default function Button({ 
+  children, 
+  variant = 'primary', 
+  size = 'md', 
+  pulse = false,
+  className = '', 
+  ...props 
+}) {
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500'
+  
+  const variants = {
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    pulse: 'btn-pulse'
+  }
+  
+  const sizes = {
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
+    xl: 'px-10 py-5 text-xl'
+  }
+  
+  const finalVariant = pulse ? 'pulse' : variant
+  
+  return (
+    <button 
+      className={`${baseClasses} ${variants[finalVariant]} ${sizes[size]} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+```
+
+### `components/ui/Card.js`
+
+```jsx
+export default function Card({ 
+  children, 
+  className = '', 
+  hover = true,
+  ...props 
+}) {
+  const baseClasses = 'bg-white border border-gray-200 rounded-lg shadow-sm'
+  const hoverClasses = hover ? 'hover:shadow-md hover:border-gray-300 transition-all duration-200' : ''
+  
+  return (
+    <div className={`${baseClasses} ${hoverClasses} ${className}`} {...props}>
+      {children}
+    </div>
+  )
+}
+```
+
+### `components/ui/Section.js`
+
+```jsx
+export default function Section({ 
+  children, 
+  className = '', 
+  background = 'white',
+  padding = 'default',
+  ...props 
+}) {
+  const backgrounds = {
+    white: 'bg-white',
+    gray: 'bg-gray-50',
+    dark: 'bg-gray-900'
+  }
+  
+  const paddings = {
+    default: 'py-16 lg:py-24',
+    large: 'py-20 lg:py-32',
+    small: 'py-12 lg:py-16'
+  }
+  
+  return (
+    <section className={`${backgrounds[background]} ${paddings[padding]} ${className}`} {...props}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {children}
+      </div>
+    </section>
+  )
+}
+```
+
+### `components/ui/Heading.js`
+
+```jsx
+export default function Heading({ 
+  children, 
+  level = 1, 
+  className = '',
+  ...props 
+}) {
+  const Tag = `h${level}`
+  
+  const sizes = {
+    1: 'text-4xl md:text-5xl lg:text-6xl font-bold leading-tight',
+    2: 'text-3xl md:text-4xl lg:text-5xl font-bold leading-tight',
+    3: 'text-2xl md:text-3xl font-bold',
+    4: 'text-xl md:text-2xl font-bold',
+    5: 'text-lg md:text-xl font-semibold',
+    6: 'text-base md:text-lg font-semibold'
+  }
+  
+  return (
+    <Tag className={`${sizes[level]} text-gray-900 ${className}`} {...props}>
+      {children}
+    </Tag>
+  )
+}
+```
+
+### `components/blocks/Navbar.js`
+
+```jsx
+'use client'
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Button from '@/components/ui/Button'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-200 ${
+      isScrolled 
+        ? 'bg-white shadow-sm' 
+        : 'bg-white/95 backdrop-blur-sm'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="text-2xl font-bold text-gray-900">
+            Simple
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="/services" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+              Services
+            </Link>
+            <Link href="/company" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+              Company
+            </Link>
+            <Button 
+              as={Link}
+              href="/book-strategy-call"
+              pulse={true}
+              size="sm"
+              className="ml-4"
+            >
+              Book a Strategy Call
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden p-2 text-gray-700"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 border-t border-gray-100">
+            <div className="flex flex-col space-y-4">
+              <Link href="/services" className="text-gray-700 hover:text-primary-600 font-medium">Services</Link>
+              <Link href="/company" className="text-gray-700 hover:text-primary-600 font-medium">Company</Link>
+              <Button as={Link} href="/book-strategy-call" pulse={true} size="sm" className="w-fit">
+                Book a Strategy Call
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  )
+}
+```
+
+### `components/blocks/Hero.js`
+
+```jsx
+import Button from '@/components/ui/Button'
+import Section from '@/components/ui/Section'
+import Heading from '@/components/ui/Heading'
+
+export default function Hero() {
+  return (
+    <Section className="pt-20 lg:pt-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* Left Column - Text Content */}
+        <div>
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-50 text-primary-700 border border-primary-200">
+              Revenue Operations Excellence
+            </span>
+          </div>
+          
+          <Heading level={1} className="mb-6">
+            Transform Your Revenue Operations Into a 
+            <span className="text-primary-600"> Growth Engine</span>
+          </Heading>
+          
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Stop losing deals to misaligned processes. We help B2B companies build predictable, 
+            scalable revenue operations that drive consistent growth and eliminate inefficiencies.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Button size="lg">
+              Get Your Assessment
+            </Button>
+            <Button variant="secondary" size="lg">
+              Learn Our Process
+            </Button>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8">
+            <div>
+              <div className="text-3xl font-bold text-gray-900">126%</div>
+              <div className="text-sm text-gray-600 font-medium">Average Pipeline Growth</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900">90 Days</div>
+              <div className="text-sm text-gray-600 font-medium">To See Results</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900">50+</div>
+              <div className="text-sm text-gray-600 font-medium">Companies Transformed</div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Right Column - Visual */}
+        <div className="relative">
+          <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 lg:p-12">
+            {/* Placeholder for visual content */}
+            <div className="space-y-6">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-4 bg-gray-200 rounded w-32"></div>
+                  <div className="h-4 bg-green-200 rounded w-16"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-2 bg-gray-100 rounded"></div>
+                  <div className="h-2 bg-gray-100 rounded w-4/5"></div>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-4 bg-gray-200 rounded w-28"></div>
+                  <div className="h-4 bg-primary-200 rounded w-20"></div>
+                </div>
+                <div className="h-24 bg-gray-50 rounded"></div>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="h-4 bg-gray-200 rounded w-36 mb-4"></div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="h-12 bg-gray-50 rounded"></div>
+                  <div className="h-12 bg-primary-50 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Features.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Features() {
+  const features = [
+    {
+      icon: (
+        <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      title: "Revenue Analytics & Reporting",
+      description: "Get clear visibility into your revenue performance with dashboards that actually matter to your business."
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      title: "Team Alignment & Process",
+      description: "Align your sales, marketing, and customer success teams around unified goals and streamlined processes."
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+      title: "Technology Optimization",
+      description: "Maximize your existing tech stack and implement new solutions that actually drive revenue growth."
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
+      title: "Predictable Growth Systems",
+      description: "Build repeatable processes that generate consistent, predictable revenue month over month."
+    }
+  ]
+
+  return (
+    <Section background="gray">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4">
+          Why Revenue Operations Matter
+        </Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Most companies struggle with disconnected systems, misaligned teams, and unpredictable revenue. 
+          We fix the fundamentals so you can scale with confidence.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {features.map((feature, index) => (
+          <Card key={index} className="p-8">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
+                  {feature.icon}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Process.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Process() {
+  const steps = [
+    {
+      number: "01",
+      title: "Assessment & Strategy",
+      description: "We analyze your current revenue operations, identify gaps, and create a customized roadmap for improvement.",
+      deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap", "Success metrics"]
+    },
+    {
+      number: "02", 
+      title: "Implementation & Optimization",
+      description: "Our team works alongside yours to implement solutions, optimize processes, and ensure smooth adoption.",
+      deliverables: ["Process optimization", "Technology setup", "Team training", "Change management"]
+    },
+    {
+      number: "03",
+      title: "Measurement & Scaling",
+      description: "We establish monitoring systems and help you scale successful processes across your entire organization.",
+      deliverables: ["Performance tracking", "Continuous improvement", "Scale optimization", "Long-term success"]
+    }
+  ]
+
+  return (
+    <Section>
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4">
+          Our Proven Process
+        </Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          A systematic approach to transforming your revenue operations, 
+          built on experience with 50+ successful implementations.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {steps.map((step, index) => (
+          <div key={index} className="relative">
+            <Card className="p-8 h-full">
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-primary-600 mb-4">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Key Deliverables:</h4>
+                <ul className="space-y-2">
+                  {step.deliverables.map((deliverable, idx) => (
+                    <li key={idx} className="flex items-start space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-600">{deliverable}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Card>
+            
+            {/* Connector line */}
+            {index < steps.length - 1 && (
+              <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-200 transform -translate-y-1/2"></div>
+            )}
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Results.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Results() {
+  const stats = [
+    { number: "126%", label: "Average Pipeline Growth", description: "Within 6 months of implementation" },
+    { number: "90", label: "Days to First Results", description: "Quick wins and measurable improvements" },
+    { number: "$2.1M", label: "Average Revenue Impact", description: "Additional revenue in first year" },
+    { number: "95%", label: "Client Satisfaction", description: "Would recommend to other companies" }
+  ]
+
+  return (
+    <Section background="dark" className="text-white">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4 text-white">
+          Results That Matter
+        </Heading>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          Our clients see real, measurable improvements in their revenue operations. 
+          Here's what you can expect when you work with us.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <Card key={index} className="p-8 text-center bg-gray-800 border-gray-700">
+            <div className="text-4xl lg:text-5xl font-bold text-primary-400 mb-2">
+              {stat.number}
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-2">
+              {stat.label}
+            </h3>
+            <p className="text-gray-400 text-sm">
+              {stat.description}
+            </p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+### `components/blocks/Testimonials.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Testimonials() {
+  const testimonials = [
+    {
+      quote: "Simple transformed our revenue operations completely. We went from chaotic processes to a well-oiled revenue machine. Our pipeline visibility improved 300% and our team is finally aligned.",
+      author: "Sarah Chen",
+      title: "VP of Revenue Operations",
+      company: "Shastic"
+    },
+    {
+      quote: "The ROI was immediate. Within 60 days we saw a 40% improvement in lead qualification and our sales cycle shortened by 25%. Best investment we've made in years.",
+      author: "Michael Rodriguez", 
+      title: "Chief Revenue Officer",
+      company: "TechFlow Solutions"
+    },
+    {
+      quote: "What impressed me most was their systematic approach. They didn't just give us advice - they worked with us to implement real solutions that continue to deliver results.",
+```
