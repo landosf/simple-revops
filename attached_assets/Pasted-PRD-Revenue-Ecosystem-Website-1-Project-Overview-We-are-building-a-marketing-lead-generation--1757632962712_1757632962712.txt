@@ -1,0 +1,99 @@
+PRD — Revenue Ecosystem Website
+
+1. Project Overview
+
+We are building a marketing + lead generation site to align our revenue ecosystem message and drive inbound strategy calls.
+
+Goals:
+	•	Communicate the problem: revenue team misalignment.
+	•	Position our solution: tech + strategy + analytics.
+	•	Build trust with social proof (case studies).
+	•	Drive conversion with Calendly bookings.
+	•	Keep the site fast, modern, and low-cost by using a static-first approach.
+
+⸻
+
+2. Tech Stack
+	•	Framework: Next.js 14 (App Router, static-first pages).
+	•	Styling: Tailwind CSS + shadcn/ui (for reusable components).
+	•	Hosting: Vercel (free tier initially).
+	•	Dev Environment: Replit (for browser-based dev, iPad compatible).
+	•	Integrations: Calendly (embedded widget).
+
+⸻
+
+3. Site Structure
+
+Navigation (top + footer)
+	•	Home
+	•	Services
+	•	Company
+	•	Book a Strategy Call (CTA, pulsing animation)
+
+⸻
+
+Pages
+
+1. Home (references: LeanLayer, Skaled)
+	•	Hero section: bold headline, sub-headline, CTA button.
+	•	Problem statement → supported with stats:
+	•	42% cite low-quality leads as challenge
+	•	91% of sales teams missed quota
+	•	Sales enablement improves win rates 15%
+	•	AI-powered forecasting = 79% vs 51%
+	•	Silos section: Marketing vs Sales, Sales vs CS, CS vs Finance, C-Suite vs Teams.
+	•	Solution section: Tech infrastructure, Analytics/BI, Revenue strategy.
+	•	Case study (Shastic → pipeline +126%, MQLs +95%).
+	•	CTA: “Get Your Assessment” button → scroll to Calendly widget.
+	•	Embedded Calendly widget at bottom.
+
+2. Services (reference: Union Square Consulting - How We Work)
+	•	Sections describing process: Discovery, GTM, Enablement, Retention.
+	•	Each section styled with clean blocks/cards.
+	•	CTA → Book a Strategy Call.
+
+3. Book a Strategy Call (reference: LeanLayer Strategy Call)
+	•	Focused landing page with headline, benefits, embedded Calendly form.
+	•	No navigation distractions except logo + footer.
+
+4. Company (reference: ThinkRevOps - Who We Are)
+	•	Story, mission, leadership.
+	•	Light design, trust-driven content.
+	•	CTA → Book a Strategy Call.
+
+⸻
+
+4. Components (shadcn/ui + Tailwind)
+	•	Button (primary, secondary, pulsing variant).
+	•	Card (service blocks, stats, case studies).
+	•	Section (wrapper with padding + max width).
+	•	Nav (logo + links + CTA button).
+	•	Footer (logo + nav links).
+	•	CalendlySection (inline embed).
+
+⸻
+
+5. Design & Performance Priorities
+	•	Static-first pages (ISR if needed later).
+	•	Responsive, mobile-first layout.
+	•	Clean typography, whitespace-driven layout (LeanLayer-style).
+	•	Minimal dependencies → Tailwind + shadcn only.
+	•	Fast load times, small bundle size.
+
+⸻
+
+6. Deliverables
+	•	Next.js project initialized on Replit.
+	•	shadcn/ui components (Button, Card, Section, Nav, Footer).
+	•	Four routes (/, /services, /company, /book).
+	•	Homepage content wired in.
+	•	Calendly widget embedded (URL to be provided).
+	•	Deploy to Vercel → staging link provided.
+
+⸻
+
+7. Future Additions (Phase 2)
+	•	Blog (static markdown posts).
+	•	Careers page.
+	•	Case studies as a separate page.
+	•	Light CMS integration (Notion or Sanity, optional).
