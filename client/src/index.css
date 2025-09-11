@@ -39,21 +39,22 @@
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: 0.75rem;
-  --shadow-2xs: 0px 2px 0px 0px hsl(221 83% 33% / 0.00);
-  --shadow-xs: 0px 2px 0px 0px hsl(221 83% 33% / 0.00);
-  --shadow-sm: 0px 2px 0px 0px hsl(221 83% 33% / 0.00), 0px 1px 2px -1px hsl(221 83% 33% / 0.00);
-  --shadow: 0px 2px 0px 0px hsl(221 83% 33% / 0.00), 0px 1px 2px -1px hsl(221 83% 33% / 0.00);
-  --shadow-md: 0px 2px 0px 0px hsl(221 83% 33% / 0.00), 0px 2px 4px -1px hsl(221 83% 33% / 0.00);
-  --shadow-lg: 0px 2px 0px 0px hsl(221 83% 33% / 0.00), 0px 4px 6px -1px hsl(221 83% 33% / 0.00);
-  --shadow-xl: 0px 2px 0px 0px hsl(221 83% 33% / 0.00), 0px 8px 10px -1px hsl(221 83% 33% / 0.00);
-  --shadow-2xl: 0px 2px 0px 0px hsl(221 83% 33% / 0.00);
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
+  
+  /* Hero theme colors */
+  --hero-primary: hsl(221 83% 33%);    /* Deep blue */
+  --hero-secondary: hsl(259 78% 55%);  /* Purple */
+  --hero-accent: hsl(42 93% 56%);      /* Yellow/gold */
+  --hero-text: hsl(0 0% 100%);         /* White text on hero */
   
   /* Custom colors for the revenue alignment theme */
   --emerald-500: hsl(159 78% 42%);
   --emerald-600: hsl(159 78% 38%);
   --amber-600: hsl(42 93% 50%);
+  
+  /* Section backgrounds that complement hero */
+  --section-alt-bg: hsl(221 83% 97%);  /* Very light blue */
+  --section-card-bg: hsl(0 0% 100%);
+  --section-border: hsl(221 30% 85%);
 }
 
 .dark {
@@ -106,11 +107,43 @@
 }
 
 @layer components {
+  /* Layout utilities */
+  .section-padding {
+    @apply py-20 md:py-24;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Text and gradient utilities */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed, #1e40af);
+  }
+  
+  /* Button styles matching hero theme */
+  .btn-primary {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur text-white border-2 border-white/20 hover:bg-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold transition-all duration-300;
+  }
+  
+  .btn-cta {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 px-6 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  /* Card and hover effects */
+  .card-hover {
+    @apply transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl;
   }
   
   .shadow-soft {
@@ -128,5 +161,21 @@
   .hover-lift:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
