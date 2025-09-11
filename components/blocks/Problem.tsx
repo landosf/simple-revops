@@ -27,35 +27,36 @@ export default function Problem() {
   const risk = getRiskLevel()
 
   return (
-    <section id="problem" className="section-padding bg-gray-50">
+    <section id="problem" className="section-padding bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container-width">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-              Is your company bleeding <span className="text-red-600">$400K+ annually</span> 
+              Is your company bleeding <span className="gradient-text">$400K+ annually</span> 
               from these revenue gaps?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-              <strong>Take this 60-second assessment</strong> - if 3+ apply to you, 
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto text-balance">
+              <strong className="text-blue-800">Take this 60-second assessment</strong> - if 3+ apply to you, 
               you're in the danger zone and losing serious money every month.
             </p>
           </div>
 
           {/* Interactive Diagnostic */}
-          <div className="bg-white border-2 border-red-200 rounded-2xl p-8 mb-16 max-w-4xl mx-auto shadow-xl card-hover">
-            <h3 className="text-3xl font-bold text-red-900 mb-8 text-center">
-              🚨 Revenue Leak Diagnostic (60 seconds)
+          <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 mb-16 max-w-4xl mx-auto shadow-xl card-hover">
+            <h3 className="text-3xl font-bold text-blue-900 mb-8 text-center">
+              ⚡ Revenue Leak Diagnostic (60 seconds)
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {diagnosticItems.map((item, index) => (
                 <label 
                   key={index} 
-                  className="flex items-start space-x-4 cursor-pointer p-4 rounded-xl hover:bg-red-50 border border-gray-200 hover:border-red-300 transition-all duration-200"
+                  className="flex items-start space-x-4 cursor-pointer p-4 rounded-xl hover:bg-blue-50 border border-gray-200 hover:border-blue-300 transition-all duration-200"
+                  data-testid={`checkbox-diagnostic-${index}`}
                 >
                   <input 
                     type="checkbox" 
-                    className="w-5 h-5 text-red-600 rounded mt-1 focus:ring-red-500" 
+                    className="w-5 h-5 text-blue-600 rounded mt-1 focus:ring-blue-500" 
                     onChange={(e) => handleCheckboxChange(e.target.checked)}
                   />
                   <span className="text-gray-800 font-medium text-balance">{item}</span>
@@ -65,20 +66,20 @@ export default function Problem() {
             
             {checkedItems > 0 && (
               <div className={`p-8 rounded-xl border-l-4 ${
-                risk.color === 'red' ? 'bg-red-100 border-red-500' :
-                risk.color === 'yellow' ? 'bg-yellow-100 border-yellow-500' : 
-                'bg-green-100 border-green-500'
-              } animate-fade-in-up`}>
+                risk.color === 'red' ? 'bg-gradient-to-r from-blue-100 to-purple-100 border-yellow-400' :
+                risk.color === 'yellow' ? 'bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-500' : 
+                'bg-gradient-to-r from-green-50 to-emerald-50 border-green-500'
+              } animate-fade-in-up`} data-testid="diagnostic-result">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                   <div>
                     <p className={`font-bold text-2xl mb-2 ${
-                      risk.color === 'red' ? 'text-red-900' :
+                      risk.color === 'red' ? 'text-blue-900' :
                       risk.color === 'yellow' ? 'text-yellow-900' : 
                       'text-green-900'
                     }`}>
                       {risk.level}: {risk.cost} Monthly Loss
                     </p>
-                    <p className="text-gray-600 text-lg">Based on {checkedItems} critical issues identified</p>
+                    <p className="text-gray-700 text-lg">Based on {checkedItems} critical issues identified</p>
                   </div>
                   <button 
                     onClick={() => {
@@ -88,15 +89,16 @@ export default function Problem() {
                       }
                     }}
                     className="btn-cta text-lg px-8 py-4"
+                    data-testid="button-audit-now"
                   >
                     Get FREE Audit Now →
                   </button>
                 </div>
                 
                 {checkedItems >= 3 && (
-                  <div className="bg-red-200 rounded-lg p-6 mt-6">
-                    <p className="text-red-900 font-bold text-center text-lg">
-                      🚨 URGENT: Your revenue operations need immediate attention. 
+                  <div className="bg-gradient-to-r from-yellow-200 to-amber-200 rounded-lg p-6 mt-6 border border-yellow-300" data-testid="urgent-warning">
+                    <p className="text-blue-900 font-bold text-center text-lg">
+                      ⚡ URGENT: Your revenue operations need immediate attention. 
                       Every day you wait costs your company $5K-15K in lost efficiency.
                     </p>
                   </div>
@@ -112,19 +114,19 @@ export default function Problem() {
                 value: '$1.2T', 
                 label: 'Lost annually to revenue misalignment globally', 
                 sublabel: "That's $400K per B2B company",
-                color: 'text-red-600'
+                color: 'gradient-text'
               },
               { 
                 value: '91%', 
                 label: 'of sales teams missed quota last year', 
                 sublabel: 'Average shortfall: 23%',
-                color: 'text-red-600'
+                color: 'text-blue-600'
               },
               { 
                 value: '65%', 
                 label: 'of revenue leaders can\'t forecast accurately', 
                 sublabel: 'Leading to 40% budget waste',
-                color: 'text-red-600'
+                color: 'text-purple-600'
               },
               { 
                 value: '18x', 
@@ -133,18 +135,18 @@ export default function Problem() {
                 color: 'text-green-600'
               }
             ].map((stat, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg card-hover">
+              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg card-hover" data-testid={`stat-card-${index}`}>
                 <div className={`text-4xl font-bold mb-3 ${stat.color}`}>{stat.value}</div>
                 <p className="text-gray-700 font-semibold mb-2 text-balance">{stat.label}</p>
-                <p className="text-sm text-gray-500 text-balance">{stat.sublabel}</p>
+                <p className="text-sm text-gray-600 text-balance">{stat.sublabel}</p>
               </div>
             ))}
           </div>
 
           {/* Revenue Chaos Impact */}
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-10">
-            <h3 className="text-3xl font-bold text-center mb-4 text-gray-900">The Daily Cost of Revenue Chaos</h3>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-balance">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-10 border border-blue-100">
+            <h3 className="text-3xl font-bold text-center mb-4 text-blue-900">The Daily Cost of Revenue Chaos</h3>
+            <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto text-balance">
               Every misaligned handoff, every bad lead, every missed forecast compounds into massive losses
             </p>
             
@@ -163,15 +165,15 @@ export default function Problem() {
                   impact: 'Result: $2.1M annually in preventable churn'
                 }
               ].map((problem, index) => (
-                <div key={index} className="bg-white border-l-4 border-red-500 rounded-xl p-8 shadow-lg">
+                <div key={index} className="bg-white border-l-4 border-yellow-400 rounded-xl p-8 shadow-lg" data-testid={`problem-card-${index}`}>
                   <div className="flex justify-between items-start mb-4">
-                    <h4 className="text-xl font-bold text-red-900 flex-1">{problem.title}</h4>
-                    <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold ml-4">
+                    <h4 className="text-xl font-bold text-blue-900 flex-1">{problem.title}</h4>
+                    <span className="bg-gradient-to-r from-yellow-500 to-amber-500 text-gray-900 px-4 py-2 rounded-full text-sm font-bold ml-4">
                       {problem.cost}
                     </span>
                   </div>
-                  <p className="text-red-800 mb-4 text-balance">{problem.description}</p>
-                  <p className="text-red-700 font-semibold text-sm bg-red-100 p-3 rounded-lg">
+                  <p className="text-gray-700 mb-4 text-balance">{problem.description}</p>
+                  <p className="text-blue-800 font-semibold text-sm bg-blue-50 p-3 rounded-lg border border-blue-200">
                     {problem.impact}
                   </p>
                 </div>
@@ -179,10 +181,10 @@ export default function Problem() {
             </div>
             
             <div className="mt-12 text-center">
-              <div className="bg-red-600 text-white rounded-2xl p-8 max-w-2xl mx-auto">
+              <div className="hero-gradient text-white rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl" data-testid="total-loss-cta">
                 <h4 className="text-3xl font-bold mb-4">Total Monthly Revenue Loss</h4>
-                <div className="text-6xl font-bold mb-4">$230K+</div>
-                <p className="text-red-100 mb-6 text-lg">That's $2.76M annually your competition isn't losing</p>
+                <div className="text-6xl font-bold mb-4 gradient-text">$230K+</div>
+                <p className="text-blue-100 mb-6 text-lg">That's $2.76M annually your competition isn't losing</p>
                 <button 
                   onClick={() => {
                     const element = document.getElementById('contact')
@@ -190,7 +192,8 @@ export default function Problem() {
                       element.scrollIntoView({ behavior: 'smooth' })
                     }
                   }}
-                  className="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="btn-primary px-8 py-4 text-lg shadow-xl"
+                  data-testid="button-stop-bleeding"
                 >
                   Stop The Bleeding - Get Free Audit →
                 </button>
