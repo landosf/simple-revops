@@ -1,0 +1,550 @@
+// ============================================
+// FILE: app/services/page.js
+// ============================================
+import Navbar from ‘@/components/blocks/Navbar’
+import Footer from ‘@/components/blocks/Footer’
+import Section from ‘@/components/ui/Section’
+import Card from ‘@/components/ui/Card’
+import Heading from ‘@/components/ui/Heading’
+import Button from ‘@/components/ui/Button’
+import Link from ‘next/link’
+
+export default function ServicesPage() {
+const services = [
+{
+title: “Revenue Operations Assessment”,
+description: “Comprehensive analysis of your current revenue operations, identifying gaps and opportunities.”,
+features: [“Current state analysis”, “Process gap identification”, “Technology stack evaluation”, “Team alignment assessment”, “Strategic recommendations”],
+timeline: “2-3 weeks”,
+outcome: “Clear roadmap for transformation”
+},
+{
+title: “Process Design & Implementation”,
+description: “Design and implement optimized revenue processes that align your teams.”,
+features: [“Process mapping and design”, “Workflow automation setup”, “Team training”, “Change management support”, “Performance monitoring”],
+timeline: “6-12 weeks”,
+outcome: “Streamlined processes and efficiency”
+},
+{
+title: “Technology Optimization”,
+description: “Maximize your existing technology investments and implement new solutions.”,
+features: [“CRM optimization”, “Integration setup”, “Dashboard creation”, “Tool consolidation”, “Training and support”],
+timeline: “4-8 weeks”,
+outcome: “Optimized tech stack with better ROI”
+},
+{
+title: “Revenue Analytics & Reporting”,
+description: “Build comprehensive reporting systems for clear revenue visibility.”,
+features: [“KPI definition”, “Custom dashboards”, “Automated reporting”, “Data quality assurance”, “Executive briefings”],
+timeline: “3-6 weeks”,
+outcome: “Data-driven insights”
+}
+]
+
+const methodology = [
+{ phase: “Discovery”, description: “Understand your business and challenges”, activities: [“Stakeholder interviews”, “Process documentation”, “Data analysis”, “Technology audit”] },
+{ phase: “Design”, description: “Design customized solutions”, activities: [“Solution architecture”, “Process design”, “Technology planning”, “Implementation roadmap”] },
+{ phase: “Implement”, description: “Deploy solutions and ensure adoption”, activities: [“Solution deployment”, “Team training”, “Change management”, “Performance monitoring”] },
+{ phase: “Optimize”, description: “Monitor and maximize results”, activities: [“Performance tracking”, “Continuous improvement”, “Scaling optimization”, “Long-term support”] }
+]
+
+return (
+<main className="min-h-screen">
+<Navbar />
+
+```
+  <Section className="pt-20 lg:pt-24">
+    <div className="text-center">
+      <div className="mb-6">
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-50 text-primary-700 border border-primary-200">
+          Our Services
+        </span>
+      </div>
+      <Heading level={1} className="mb-6">
+        Comprehensive Revenue Operations <span className="text-primary-600">Solutions</span>
+      </Heading>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        End-to-end revenue operations services designed to transform your business. Every solution is customized to your needs.
+      </p>
+      <Link href="/book-strategy-call">
+        <Button size="lg">Schedule a Consultation</Button>
+      </Link>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">Our Service Offerings</Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Each service addresses specific aspects of revenue operations, or combine for comprehensive transformation.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {services.map((service, index) => (
+        <Card key={index} className="p-8">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{service.description}</p>
+          </div>
+          
+          <div className="mb-6">
+            <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+            <ul className="space-y-2">
+              {service.features.map((feature, idx) => (
+                <li key={idx} className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-600">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+            <div>
+              <div className="text-sm font-medium text-gray-900">Timeline</div>
+              <div className="text-sm text-gray-600">{service.timeline}</div>
+            </div>
+            <Link href="/book-strategy-call">
+              <Button size="sm">Learn More</Button>
+            </Link>
+          </div>
+          
+          <div className="mt-4 p-4 bg-primary-50 rounded-lg">
+            <div className="text-sm font-medium text-primary-900 mb-1">Expected Outcome:</div>
+            <div className="text-sm text-primary-800">{service.outcome}</div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">Our Methodology</Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        A proven methodology that ensures successful outcomes for every client.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {methodology.map((phase, index) => (
+        <div key={index} className="relative">
+          <div className="text-center mb-6">
+            <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+              {index + 1}
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{phase.phase}</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">{phase.description}</p>
+          </div>
+          
+          <div>
+            <h4 className="font-medium text-gray-900 mb-2 text-sm">Key Activities:</h4>
+            <ul className="space-y-1">
+              {phase.activities.map((activity, idx) => (
+                <li key={idx} className="text-gray-600 text-sm flex items-start space-x-2">
+                  <div className="w-1 h-1 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>{activity}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {index < methodology.length - 1 && (
+            <div className="hidden lg:block absolute top-6 -right-4 w-8 h-0.5 bg-gray-200"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="text-center">
+      <Heading level={2} className="mb-6">Ready to Get Started?</Heading>
+      <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Let's discuss your needs and create a customized plan.
+      </p>
+      <Link href="/book-strategy-call">
+        <Button size="lg">Schedule Your Strategy Call</Button>
+      </Link>
+    </div>
+  </Section>
+
+  <Footer />
+</main>
+```
+
+)
+}
+
+// ============================================
+// FILE: app/company/page.js
+// ============================================
+import Navbar from ‘@/components/blocks/Navbar’
+import Footer from ‘@/components/blocks/Footer’
+import Section from ‘@/components/ui/Section’
+import Card from ‘@/components/ui/Card’
+import Heading from ‘@/components/ui/Heading’
+import Button from ‘@/components/ui/Button’
+import Link from ‘next/link’
+
+export default function CompanyPage() {
+const team = [
+{
+name: “Alex Thompson”,
+title: “Founder & CEO”,
+bio: “15+ years building revenue operations at high-growth B2B companies. Former VP of Revenue Operations at three successful exits.”,
+expertise: [“Revenue Strategy”, “Process Design”, “Team Building”]
+},
+{
+name: “Sarah Rodriguez”,
+title: “Head of Client Success”,
+bio: “Former Director of Sales Operations at Fortune 500 company. Expert in change management and team alignment.”,
+expertise: [“Change Management”, “Training”, “Client Success”]
+},
+{
+name: “Michael Chen”,
+title: “Senior Revenue Analyst”,
+bio: “Data scientist turned revenue operations expert. Specializes in building analytics systems.”,
+expertise: [“Data Analytics”, “Reporting”, “Performance”]
+}
+]
+
+const values = [
+{
+title: “Results-Driven”,
+description: “We measure success by the tangible impact we create for our clients’ businesses.”,
+icon: <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+},
+{
+title: “Partnership Mindset”,
+description: “We work as an extension of your team, not as outside consultants.”,
+icon: <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+},
+{
+title: “Continuous Innovation”,
+description: “We stay ahead of industry trends and continuously evolve our methodologies.”,
+icon: <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+}
+]
+
+return (
+<main className="min-h-screen">
+<Navbar />
+
+```
+  <Section className="pt-20 lg:pt-24">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div className="mb-6">
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-50 text-primary-700 border border-primary-200">
+            Who We Are
+          </span>
+        </div>
+        <Heading level={1} className="mb-6">
+          We're Revenue Operations <span className="text-primary-600">Experts</span>
+        </Heading>
+        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+          Simple was founded by revenue operations leaders who have been in your shoes. 
+          We've built, scaled, and optimized revenue operations at companies from startup to enterprise.
+        </p>
+        <Link href="/book-strategy-call">
+          <Button size="lg">Work With Us</Button>
+        </Link>
+      </div>
+      
+      <div className="bg-primary-50 rounded-2xl p-8">
+        <div className="grid grid-cols-2 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
+            <div className="text-sm text-gray-600">Companies Transformed</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary-600 mb-2">$47M</div>
+            <div className="text-sm text-gray-600">Revenue Impact</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary-600 mb-2">126%</div>
+            <div className="text-sm text-gray-600">Avg Pipeline Growth</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary-600 mb-2">95%</div>
+            <div className="text-sm text-gray-600">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-12">
+        <Heading level={2} className="mb-6">Our Mission</Heading>
+        <p className="text-xl text-gray-600 leading-relaxed">
+          To help B2B companies build predictable, scalable revenue operations that eliminate inefficiencies and accelerate growth.
+        </p>
+      </div>
+      
+      <div className="space-y-6 text-gray-600 text-lg">
+        <p>
+          We founded Simple because we saw too many companies struggling with the same revenue operations challenges. 
+          Misaligned teams, fragmented processes, and disconnected systems were holding back growth everywhere.
+        </p>
+        <p>
+          After successfully transforming revenue operations at multiple high-growth companies, we developed a systematic 
+          approach that addresses root causes, not just symptoms.
+        </p>
+        <p>
+          Today, we work with companies of all sizes to implement strategies that have driven hundreds of millions in 
+          revenue growth. Our approach is practical, measurable, and designed for long-term success.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">Our Values</Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        These principles guide everything we do.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {values.map((value, index) => (
+        <Card key={index} className="p-8 text-center">
+          <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mx-auto mb-6">
+            {value.icon}
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
+          <p className="text-gray-600 leading-relaxed">{value.description}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">Meet Our Team</Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Revenue operations experts with real-world experience.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {team.map((member, index) => (
+        <Card key={index} className="p-8 text-center">
+          <div className="w-24 h-24 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <div className="text-2xl font-bold text-primary-600">
+              {member.name.split(' ').map(n => n[0]).join('')}
+            </div>
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+          <div className="text-primary-600 font-medium mb-4">{member.title}</div>
+          <p className="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
+          <div>
+            <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {member.expertise.map((skill, idx) => (
+                <span key={idx} className="px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-xs font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <div className="text-center max-w-3xl mx-auto">
+      <Heading level={2} className="mb-6">Ready to Work Together?</Heading>
+      <p className="text-xl text-gray-600 mb-8">
+        Let's discuss how we can help transform your revenue operations.
+      </p>
+      <Link href="/book-strategy-call">
+        <Button size="lg">Schedule a Strategy Call</Button>
+      </Link>
+    </div>
+  </Section>
+
+  <Footer />
+</main>
+```
+
+)
+}
+
+// ============================================
+// FILE: app/book-strategy-call/page.js
+// ============================================
+import Navbar from ‘@/components/blocks/Navbar’
+import Footer from ‘@/components/blocks/Footer’
+import Section from ‘@/components/ui/Section’
+import Card from ‘@/components/ui/Card’
+import Heading from ‘@/components/ui/Heading’
+import Button from ‘@/components/ui/Button’
+
+export default function BookStrategyCallPage() {
+const benefits = [
+{ title: “Revenue Operations Assessment”, description: “Analyze your operations and identify opportunities.”, icon: “🔍” },
+{ title: “Custom Growth Strategy”, description: “Get a personalized roadmap for your situation.”, icon: “🎯” },
+{ title: “Quick Wins Identification”, description: “Discover immediate actions you can take.”, icon: “⚡” },
+{ title: “Technology Recommendations”, description: “Learn which tools give you the biggest ROI.”, icon: “🛠️” }
+]
+
+const process = [
+{ step: “1”, title: “Book Your Call”, description: “Schedule a 30-minute session.” },
+{ step: “2”, title: “Share Your Challenges”, description: “Discuss your challenges and goals.” },
+{ step: “3”, title: “Get Your Strategy”, description: “Receive customized recommendations.” },
+{ step: “4”, title: “Decide Next Steps”, description: “No pressure either way.” }
+]
+
+const faqs = [
+{ question: “What should I expect from this call?”, answer: “A consultative session where we discuss your challenges and provide specific recommendations. It’s not a sales pitch.” },
+{ question: “Do I need to prepare anything?”, answer: “Just come ready to discuss your challenges. We’ll guide the conversation.” },
+{ question: “Is this really free?”, answer: “Yes, absolutely. We provide genuine value because we believe in building relationships first.” },
+{ question: “Will you try to sell me something?”, answer: “Our focus is on providing value. If there’s a good fit, we’ll discuss it, but there’s no pressure.” },
+{ question: “Who should attend?”, answer: “Someone involved in revenue operations, sales operations, or revenue leadership.” }
+]
+
+return (
+<main className="min-h-screen">
+<Navbar />
+
+```
+  <Section className="pt-20 lg:pt-24">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="mb-6">
+        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-50 text-primary-700 border border-primary-200">
+          Free Strategy Session
+        </span>
+      </div>
+      <Heading level={1} className="mb-6">
+        Get a Custom Revenue Operations <span className="text-primary-600">Strategy for Your Business</span>
+      </Heading>
+      <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+        Book a complimentary 30-minute strategy session and discover the specific steps to optimize your revenue operations.
+      </p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {['100% Free', 'Actionable Insights', '30 Minutes Expert Time', 'Custom Strategy'].map((item, idx) => (
+          <div key={idx} className="flex items-center space-x-3">
+            <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="text-gray-700 font-medium">{item}</span>
+          </div>
+        ))}
+      </div>
+      
+      <Button size="lg" className="mb-4">Book Your Free Strategy Call</Button>
+      <p className="text-gray-500 text-sm">Most popular: Tuesdays & Wednesdays, 10am-4pm EST</p>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">What You'll Get From This Call</Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        This isn't just a discovery call. You'll walk away with specific, actionable insights.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {benefits.map((benefit, index) => (
+        <Card key={index} className="p-8">
+          <div className="flex items-start space-x-4">
+            <div className="text-4xl">{benefit.icon}</div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-12">
+        <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
+        <p className="text-lg text-gray-600">Choose a time that works for you. All calls via Zoom.</p>
+      </div>
+      
+      <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-16">
+        <div className="text-center">
+          <div className="w-20 h-20 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg className="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Calendly Widget Integration</h3>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Replace this placeholder with your Calendly embed code.
+          </p>
+          <div className="bg-white rounded-lg p-6 border border-gray-200 max-w-lg mx-auto">
+            <h4 className="font-semibold text-gray-900 mb-3">Embed Code:</h4>
+            <code className="text-sm text-gray-600 bg-gray-100 p-3 rounded block break-all">
+              &lt;div class="calendly-inline-widget" data-url="https://calendly.com/your-link" style="min-width:320px;height:600px;"&gt;&lt;/div&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">How It Works</Heading>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {process.map((item, index) => (
+        <div key={index} className="text-center">
+          <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+            {item.step}
+          </div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
+          <p className="text-gray-600 text-sm">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4">Frequently Asked Questions</Heading>
+      </div>
+
+      <div className="space-y-8">
+        {faqs.map((faq, index) => (
+          <div key={index}>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+            <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-primary-200">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section background="gray">
+    <div className="max-w-3xl mx-auto text-center">
+      <Heading level={2} className="mb-6">Ready to Optimize Your Revenue Operations?</Heading>
+      <p className="text-xl text-gray-600 mb-8">Book your complimentary strategy session now.</p>
+      <Button size="lg" className="mb-4">Book Your Free Strategy Call Now</Button>
+      <p className="text-gray-500 text-sm">No commitment • 100% free • Immediate value</p>
+    </div>
+  </Section>
+
+  <Footer />
+</main>
+```
+
+)
+}

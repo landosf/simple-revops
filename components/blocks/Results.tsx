@@ -11,10 +11,10 @@ export default function Results() {
   ]
 
   return (
-    <Section background="dark" className="text-white" id="results">
+    <Section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-800 text-white" id="results">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4 text-white">Results That Matter</Heading>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">Real, measurable improvements</p>
+        <p className="text-xl text-purple-100 max-w-3xl mx-auto">Real, measurable improvements</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, index) => (
