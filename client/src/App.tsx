@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import CompanyPage from "./pages/CompanyPage";
 import BookStrategyCallPage from "./pages/BookStrategyCallPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/services" component={ServicesPage} />
         <Route path="/company" component={CompanyPage} />
         <Route path="/book-strategy-call" component={BookStrategyCallPage} />
+        <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/terms" component={TermsPage} />
         <Toaster />
       </div>
     </Router>

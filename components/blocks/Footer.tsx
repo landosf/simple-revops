@@ -42,8 +42,18 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Simple. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Simple. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/privacy">
+                <a className="text-gray-400 hover:text-white text-sm" data-testid="link-footer-privacy">Privacy Policy</a>
+              </Link>
+              <Link href="/terms">
+                <a className="text-gray-400 hover:text-white text-sm" data-testid="link-footer-terms">Terms of Use</a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
