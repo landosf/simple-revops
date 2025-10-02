@@ -1,0 +1,212 @@
+# Remaining Components and Pages - Copy Each File
+
+Save this as a reference and copy each section into your Replit project.
+
+## Component: Process.js
+
+**Location:** `components/blocks/Process.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Process() {
+  const steps = [
+    { number: "01", title: "Assessment & Strategy", description: "Analyze current operations and create roadmap", deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap"] },
+    { number: "02", title: "Implementation", description: "Work with your team to implement solutions", deliverables: ["Process optimization", "Technology setup", "Team training"] },
+    { number: "03", title: "Measurement & Scaling", description: "Monitor and scale across organization", deliverables: ["Performance tracking", "Continuous improvement", "Scale optimization"] }
+  ]
+
+  return (
+    <Section>
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4">Our Proven Process</Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Built on 50+ successful implementations</p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {steps.map((step, index) => (
+          <Card key={index} className="p-8">
+            <div className="text-4xl font-bold text-primary-600 mb-4">{step.number}</div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+            <p className="text-gray-600 mb-6">{step.description}</p>
+            <ul className="space-y-2">
+              {step.deliverables.map((item, idx) => (
+                <li key={idx} className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2"></div>
+                  <span className="text-gray-600 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+## Component: Results.js
+
+**Location:** `components/blocks/Results.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Results() {
+  const stats = [
+    { number: "126%", label: "Average Pipeline Growth", description: "Within 6 months" },
+    { number: "90", label: "Days to First Results", description: "Quick wins" },
+    { number: "$2.1M", label: "Average Revenue Impact", description: "First year" },
+    { number: "95%", label: "Client Satisfaction", description: "Would recommend" }
+  ]
+
+  return (
+    <Section background="dark" className="text-white">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4 text-white">Results That Matter</Heading>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">Real, measurable improvements</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <Card key={index} className="p-8 text-center bg-gray-800 border-gray-700">
+            <div className="text-4xl lg:text-5xl font-bold text-primary-400 mb-2">{stat.number}</div>
+            <h3 className="text-lg font-semibold text-white mb-2">{stat.label}</h3>
+            <p className="text-gray-400 text-sm">{stat.description}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+## Component: Testimonials.js
+
+**Location:** `components/blocks/Testimonials.js`
+
+```jsx
+import Section from '@/components/ui/Section'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+
+export default function Testimonials() {
+  const testimonials = [
+    { quote: "Simple transformed our revenue operations completely. Pipeline visibility improved 300%.", author: "Sarah Chen", title: "VP Revenue Ops", company: "Shastic" },
+    { quote: "ROI was immediate. 40% improvement in lead qualification within 60 days.", author: "Michael Rodriguez", title: "CRO", company: "TechFlow" },
+    { quote: "Systematic approach delivered real solutions that continue working.", author: "Jennifer Park", title: "Head of Sales Ops", company: "DataCore" }
+  ]
+
+  return (
+    <Section background="gray">
+      <div className="text-center mb-16">
+        <Heading level={2} className="mb-4">What Our Clients Say</Heading>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {testimonials.map((t, index) => (
+          <Card key={index} className="p-8">
+            <blockquote className="text-gray-600 mb-6">"{t.quote}"</blockquote>
+            <div>
+              <div className="font-semibold text-gray-900">{t.author}</div>
+              <div className="text-gray-600 text-sm">{t.title}</div>
+              <div className="text-primary-600 text-sm font-medium">{t.company}</div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+```
+
+## Component: CTA.js
+
+**Location:** `components/blocks/CTA.js`
+
+```jsx
+import Button from '@/components/ui/Button'
+import Section from '@/components/ui/Section'
+import Heading from '@/components/ui/Heading'
+
+export default function CTA() {
+  return (
+    <Section id="assessment">
+      <div className="max-w-4xl mx-auto text-center">
+        <Heading level={2} className="mb-6">Ready to Transform Your Revenue Operations?</Heading>
+        <p className="text-xl text-gray-600 mb-8">Get your complimentary assessment</p>
+        <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-12 mb-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="w-16 h-16 bg-primary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Calendly Widget Goes Here</h3>
+            <p className="text-gray-600 mb-6">Replace with your Calendly embed code</p>
+            <div className="bg-white rounded-lg p-4 border border-gray-200">
+              <code className="text-sm text-gray-500">
+                &lt;div class="calendly-inline-widget" data-url="https://calendly.com/your-link"&gt;&lt;/div&gt;
+              </code>
+            </div>
+          </div>
+        </div>
+        <Button size="lg" className="mb-4">Get Your Assessment</Button>
+        <p className="text-gray-500 text-sm">30-minute consultation • No commitment</p>
+      </div>
+    </Section>
+  )
+}
+```
+
+## Component: Footer.js
+
+**Location:** `components/blocks/Footer.js`
+
+```jsx
+import Link from 'next/link'
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="col-span-2">
+            <div className="text-2xl font-bold mb-4">Simple</div>
+            <p className="text-gray-400 mb-6">Build predictable, scalable revenue operations</p>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Navigation</h4>
+            <ul className="space-y-2">
+              <li><Link href="/" className="text-gray-400 hover:text-white">Home</Link></li>
+              <li><Link href="/services" className="text-gray-400 hover:text-white">Services</Link></li>
+              <li><Link href="/company" className="text-gray-400 hover:text-white">Company</Link></li>
+              <li><Link href="/book-strategy-call" className="text-gray-400 hover:text-white">Book a Strategy Call</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <ul className="space-y-2">
+              <li className="text-gray-400">hello@simple.com</li>
+              <li className="text-gray-400">+1 (555) 123-4567</li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Simple. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+```
+
+## Quick Setup Instructions:
+
+1. **Create folder structure in Replit:**
+- `components/blocks/` - Put all the above components here
+- `components/ui/` - Button, Card, Section, Heading (from previous artifact)
+- `app/` - page.js, layout.js, globals.css, and page folders
+1. **Copy files in this order:**
+- Config files (package.json, tail
