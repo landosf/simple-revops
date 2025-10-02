@@ -6,7 +6,7 @@ interface CalendlyWidgetProps {
 }
 
 export function CalendlyWidget({ 
-  url = "https://calendly.com/landryyoder/simple-strategy-call",
+  url = "https://calendly.com/landryyoder/simple-strategy-call?hide_event_type_details=1&hide_gdpr_banner=1",
   height = "700px"
 }: CalendlyWidgetProps) {
   useEffect(() => {
