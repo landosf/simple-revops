@@ -22,7 +22,7 @@ export default function Features() {
   ]
 
   return (
-    <Section background="gray">
+    <Section className="bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Why Revenue Operations Matter</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
