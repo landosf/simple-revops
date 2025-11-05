@@ -40,10 +40,8 @@ export default function Navbar() {
               </a>
             </Link>
             <Link href="/book-strategy-call">
-              <a data-testid="button-book-call">
-                <Button size="sm" className="ml-4">
-                  Book a Strategy Call
-                </Button>
+              <a className="ml-4 px-4 py-2 font-medium text-white bg-blue-600 border-2 border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700 transition-colors" data-testid="button-book-call">
+                Book a Strategy Call
               </a>
             </Link>
           </div>
@@ -73,10 +71,8 @@ export default function Navbar() {
                 </a>
               </Link>
               <Link href="/book-strategy-call">
-                <a data-testid="button-mobile-book-call">
-                  <Button size="sm" className="w-fit">
-                    Book a Strategy Call
-                  </Button>
+                <a className="px-4 py-2 font-medium text-white bg-blue-600 border-2 border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700 transition-colors w-fit inline-block" data-testid="button-mobile-book-call">
+                  Book a Strategy Call
                 </a>
               </Link>
             </div>
