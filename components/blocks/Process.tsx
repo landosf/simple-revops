@@ -40,6 +40,9 @@ export default function Process() {
             <div key={index} className="relative" data-testid={`card-process-${index}`}>
               {/* Content card */}
               <Card className="p-8 hover-lift bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100">
+                <div className="text-center mb-4">
+                  <span className="text-7xl font-black text-primary" data-testid={`text-step-number-${index}`}>{step.number}</span>
+                </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center" data-testid={`text-step-title-${index}`}>
                   {step.title}
                 </h3>
