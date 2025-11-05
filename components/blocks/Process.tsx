@@ -6,7 +6,7 @@ export default function Process() {
   const steps = [
     { 
       number: "01", 
-      title: "Assessment & Strategy", 
+      title: "Data Assessment & Strategy", 
       description: "Analyze current operations and create roadmap", 
       deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap"] 
     },
