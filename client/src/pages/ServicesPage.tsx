@@ -122,9 +122,6 @@ export default function ServicesPage() {
         <Section>
           <div className="text-center mb-16">
             <Heading level={2} className="mb-4">Our Methodology</Heading>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A proven methodology that ensures successful outcomes for every client.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
