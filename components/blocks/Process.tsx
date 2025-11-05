@@ -28,7 +28,7 @@ export default function Process() {
     <Section id="process">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Our Data-Driven Process</Heading>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">It starts with data integrity with an accuracy, reliable, serviceable, and accessible framework for success.</p>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">A framework for success starts with data quality.</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {steps.map((step, index) => (
