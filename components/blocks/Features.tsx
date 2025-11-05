@@ -26,7 +26,7 @@ export default function Features() {
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Why Revenue Operations Matter</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Simple focuses on fundamentals so you can scale with confidence.
+          At Simple, we focus on fundamentals so you can scale with confidence.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
