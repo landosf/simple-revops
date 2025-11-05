@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <div className="text-2xl font-bold mb-4" data-testid="text-footer-brand">Simple</div>
-            <p className="text-gray-400 mb-6">Build predictable, scalable revenue operations.</p>
+            <p className="text-gray-400 mb-6">Build predictable, scalable revenue operations</p>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Navigation</h4>
