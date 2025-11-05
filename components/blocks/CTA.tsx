@@ -6,10 +6,6 @@ export default function CTA() {
   return (
     <Section id="assessment">
       <div className="max-w-4xl mx-auto text-center">
-        <Heading level={2} className="mb-6">Book Your Strategy Call</Heading>
-        <p className="text-xl text-gray-600 mb-8" data-testid="text-cta-subtitle">
-          Get a complimentary assessment. Choose a time.
-        </p>
         <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-12 mb-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
