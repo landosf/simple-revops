@@ -16,8 +16,8 @@ export default function Features() {
     },
     {
       icon: <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>,
-      title: "Predictable Growth Systems",
-      description: "Build repeatable processes that generate consistent revenue."
+      title: "Predictable Business Growth",
+      description: "Build efficient systems that generate repeatable revenue with improved conversions, reduced leakage, and data monitization."
     }
   ]
 
