@@ -26,7 +26,7 @@ export default function Features() {
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Why RevOps with Simple</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Meniacally focused on the fundamentals to drive accountability across the revenue process.
+          Bring a lazer focus to the fundamentals that drive and expand revenue for your organization.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
