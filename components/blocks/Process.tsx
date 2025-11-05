@@ -27,8 +27,8 @@ export default function Process() {
   return (
     <Section id="process">
       <div className="text-center mb-16">
-        <Heading level={2} className="mb-4">Our Proven Process</Heading>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Built on 50+ successful implementations</p>
+        <Heading level={2} className="mb-4">Our Data-Driven Process</Heading>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Data quality & insights, efficiency actions & optimization, and AI automation.</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {steps.map((step, index) => (
