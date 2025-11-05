@@ -27,8 +27,7 @@ export default function Process() {
   return (
     <Section id="process" className="bg-white">
       <div className="text-center mb-16">
-        <Heading level={2} className="mb-4">Our Data-Driven Process</Heading>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">A framework for success starts with data quality.</p>
+        <Heading level={2}>Our Data-Driven Process</Heading>
       </div>
       
       <div className="relative">
@@ -55,11 +54,11 @@ export default function Process() {
                 </p>
                 
                 <div className="border-t border-gray-200 pt-6">
-                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-4">Key Deliverables</p>
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-4 text-center">Key Deliverables</p>
                   <ul className="space-y-3">
                     {step.deliverables.map((item, idx) => (
-                      <li key={idx} className="flex items-start space-x-3" data-testid={`list-deliverable-${index}-${idx}`}>
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <li key={idx} className="flex items-center justify-center space-x-3" data-testid={`list-deliverable-${index}-${idx}`}>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
                       </li>
                     ))}
