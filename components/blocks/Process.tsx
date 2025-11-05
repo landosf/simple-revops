@@ -40,8 +40,8 @@ export default function Process() {
             <div key={index} className="relative" data-testid={`card-process-${index}`}>
               {/* Step number circle */}
               <div className="flex justify-center mb-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg relative z-10" data-testid={`text-step-number-${index}`}>
-                  <span className="text-6xl font-bold text-white">{step.number}</span>
+                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg relative z-10" data-testid={`text-step-number-${index}`}>
+                  <span className="text-8xl font-black text-white">{step.number}</span>
                 </div>
               </div>
               
