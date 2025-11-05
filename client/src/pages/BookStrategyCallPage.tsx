@@ -59,9 +59,10 @@ export default function BookStrategyCallPage() {
                 </div>
               ))}
             </div>
-            
-            <Button size="lg" className="mb-4" data-testid="button-book-call">Book Your Free Strategy Call</Button>
-            <p className="text-gray-500 text-sm">Most popular: Tuesdays & Wednesdays, 10am-4pm EST</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto mt-8">
+            <CalendlyWidget />
           </div>
         </Section>
 
