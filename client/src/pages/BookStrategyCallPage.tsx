@@ -92,7 +92,7 @@ export default function BookStrategyCallPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
-              <p className="text-lg text-gray-600">Choose a time that works for you. All calls via Zoom.</p>
+              <p className="text-lg text-gray-600">Choose a time that works for you.</p>
             </div>
             
             <CalendlyWidget />
