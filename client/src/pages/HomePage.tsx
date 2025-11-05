@@ -21,7 +21,7 @@ export default function HomePage() {
         <Results />
         <Testimonials />
         <CTA />
-        <Section>
+        <Section padding="small">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
