@@ -25,33 +25,50 @@ export default function Process() {
   ]
 
   return (
-    <Section id="process">
+    <Section id="process" className="bg-white">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Our Data-Driven Process</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">A framework for success starts with data quality.</p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {steps.map((step, index) => (
-          <Card key={index} className="p-8 hover-lift" data-testid={`card-process-${index}`}>
-            <div className="text-4xl font-bold text-primary mb-4" data-testid={`text-step-number-${index}`}>
-              {step.number}
+      
+      <div className="relative">
+        {/* Desktop connecting line */}
+        <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" style={{ top: '80px' }}></div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative">
+          {steps.map((step, index) => (
+            <div key={index} className="relative" data-testid={`card-process-${index}`}>
+              {/* Step number circle */}
+              <div className="flex justify-center mb-6">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg relative z-10" data-testid={`text-step-number-${index}`}>
+                  <span className="text-5xl font-bold text-white">{step.number}</span>
+                </div>
+              </div>
+              
+              {/* Content card */}
+              <Card className="p-8 hover-lift bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center" data-testid={`text-step-title-${index}`}>
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 mb-6 text-center leading-relaxed" data-testid={`text-step-desc-${index}`}>
+                  {step.description}
+                </p>
+                
+                <div className="border-t border-gray-200 pt-6">
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-4">Key Deliverables</p>
+                  <ul className="space-y-3">
+                    {step.deliverables.map((item, idx) => (
+                      <li key={idx} className="flex items-start space-x-3" data-testid={`list-deliverable-${index}-${idx}`}>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3" data-testid={`text-step-title-${index}`}>
-              {step.title}
-            </h3>
-            <p className="text-gray-600 mb-6" data-testid={`text-step-desc-${index}`}>
-              {step.description}
-            </p>
-            <ul className="space-y-2">
-              {step.deliverables.map((item, idx) => (
-                <li key={idx} className="flex items-start space-x-2" data-testid={`list-deliverable-${index}-${idx}`}>
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                  <span className="text-gray-600 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
     </Section>
   )
