@@ -24,7 +24,7 @@ export default function BookStrategyCallPage() {
   const faqs = [
     { question: "What should I expect from this call?", answer: "A consultative session where we discuss your challenges and provide specific recommendations. It's not a sales pitch." },
     { question: "Do I need to prepare anything?", answer: "Just come ready to discuss your challenges. We'll guide the conversation." },
-    { question: "Is this really free?", answer: "Yes, absolutely. We provide genuine value because we believe in building relationships first." },
+    { question: "Is this really free?", answer: "Yes, absolutely. We believe in building relationships first and providing genuine value before further discussions." },
     { question: "Will you try to sell me something?", answer: "Our focus is on providing value. If there's a good fit, we'll discuss it, but there's no pressure." },
     { question: "Who should attend?", answer: "Someone involved in revenue operations, sales operations, or revenue leadership." }
   ]
