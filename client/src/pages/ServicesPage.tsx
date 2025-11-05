@@ -5,6 +5,7 @@ import { Section } from '../../../components/ui/section'
 import { Card } from '../../../components/ui/card'
 import { Heading } from '../../../components/ui/heading'
 import { Button } from '../../../components/ui/button'
+import { CalendlyWidget } from '../../../components/ui/calendly-widget'
 
 export default function ServicesPage() {
   const services = [
@@ -155,16 +156,14 @@ export default function ServicesPage() {
         </Section>
 
         <Section background="gray">
-          <div className="text-center">
-            <Heading level={2} className="mb-6">Ready to Get Started?</Heading>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss your needs and create a customized plan.
-            </p>
-            <Link href="/book-strategy-call">
-              <a>
-                <Button size="lg" data-testid="button-schedule-call">Schedule Your Strategy Call</Button>
-              </a>
-            </Link>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <Heading level={2} className="mb-6">Ready to Get Started?</Heading>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Let's discuss your needs and create a customized plan.
+              </p>
+            </div>
+            <CalendlyWidget />
           </div>
         </Section>
       </main>
