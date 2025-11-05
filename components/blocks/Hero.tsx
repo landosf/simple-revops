@@ -1,7 +1,7 @@
 import { Button } from '@/../../components/ui/button'
 import { Section } from '@/../../components/ui/section'
 import { Heading } from '@/../../components/ui/heading'
-import heroImage from '@assets/generated_images/Professional_business_analytics_dashboard_007f6884.png'
+import heroImage from '@assets/IMG_6148_1762297106937.jpeg'
 
 export default function Hero() {
   const scrollToAssessment = () => {
@@ -22,6 +22,12 @@ export default function Hero() {
     <Section className="pt-20 lg:pt-24" background="white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20" data-testid="badge-revenue-ops">
+              Revenue Operations Excellence
+            </span>
+          </div>
+          
           <Heading level={1} className="mb-6">
             Transform Your Revenue Operations Into a 
             <span className="text-primary"> Growth Engine</span>
@@ -58,7 +64,7 @@ export default function Hero() {
         </div>
         
         <div className="relative">
-          <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/10">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src={heroImage} 
               alt="Revenue Operations Professional" 
