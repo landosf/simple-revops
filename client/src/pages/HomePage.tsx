@@ -26,10 +26,14 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <Heading level={2} className="mb-4">Book Your Free Strategy Call</Heading>
               <p className="text-lg text-gray-600">
-                Choose a time that works for you. All calls via Zoom.
+                Choose a time that works for you.
               </p>
             </div>
             <CalendlyWidget />
+            <div className="text-center mt-8">
+              <p className="text-xl font-semibold text-gray-900 mb-2" data-testid="text-assessment-cta">Get Your Assessment</p>
+              <p className="text-gray-500 text-sm" data-testid="text-consultation-details">30-minute consultation • No commitment</p>
+            </div>
           </div>
         </Section>
       </main>
