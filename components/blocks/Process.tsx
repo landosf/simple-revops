@@ -1,6 +1,9 @@
 import { Section } from '@/../../components/ui/section'
 import { Card } from '@/../../components/ui/card'
 import { Heading } from '@/../../components/ui/heading'
+import dataAssessmentImg from '@assets/stock_images/data_analysis_dashbo_c00dfa9d.jpg'
+import implementationImg from '@assets/stock_images/team_collaboration_t_f85a69eb.jpg'
+import measurementImg from '@assets/stock_images/business_growth_scal_4675a3d4.jpg'
 
 export default function Process() {
   const steps = [
@@ -8,19 +11,22 @@ export default function Process() {
       number: "01", 
       title: "Data Assessment & Strategy", 
       description: "Analyze current operations and create roadmap", 
-      deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap"] 
+      deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap"],
+      image: dataAssessmentImg
     },
     { 
       number: "02", 
       title: "Implementation", 
       description: "Work with your team to implement solutions", 
-      deliverables: ["Process optimization", "Technology setup", "Team training"] 
+      deliverables: ["Process optimization", "Technology setup", "Team training"],
+      image: implementationImg
     },
     { 
       number: "03", 
       title: "Measurement & Scaling", 
       description: "Monitor and scale across organization", 
-      deliverables: ["Performance tracking", "Continuous improvement", "Scale optimization"] 
+      deliverables: ["Performance tracking", "Continuous improvement", "Scale optimization"],
+      image: measurementImg
     }
   ]
 
@@ -33,11 +39,21 @@ export default function Process() {
       
       <div className="relative">
         {/* Desktop connecting line */}
-        <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" style={{ top: '80px' }}></div>
+        <div className="hidden lg:block absolute left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" style={{ top: '240px' }}></div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative">
           {steps.map((step, index) => (
             <div key={index} className="relative" data-testid={`card-process-${index}`}>
+              {/* Image */}
+              <div className="mb-6 rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src={typeof step.image === 'string' ? step.image : step.image.src} 
+                  alt={step.title}
+                  className="w-full h-48 object-cover"
+                  data-testid={`img-process-${index}`}
+                />
+              </div>
+              
               {/* Step number circle */}
               <div className="flex justify-center mb-6">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg relative z-10" data-testid={`text-step-number-${index}`}>
