@@ -135,13 +135,12 @@ export default function ServicesPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">{phase.description}</p>
                 </div>
                 
-                <div>
+                <div className="text-center">
                   <h4 className="font-medium text-gray-900 mb-2 text-sm">Key Activities:</h4>
                   <ul className="space-y-1">
                     {phase.activities.map((activity, idx) => (
-                      <li key={idx} className="text-gray-600 text-sm flex items-start space-x-2">
-                        <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span>{activity}</span>
+                      <li key={idx} className="text-gray-600 text-sm">
+                        {activity}
                       </li>
                     ))}
                   </ul>
