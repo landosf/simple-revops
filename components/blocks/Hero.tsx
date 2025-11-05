@@ -57,8 +57,8 @@ export default function Hero() {
               <div className="text-sm text-gray-600 font-medium" data-testid="stat-velocity-label">Sales Velocity</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900" data-testid="stat-cycle-time">-35%</div>
-              <div className="text-sm text-gray-600 font-medium" data-testid="stat-cycle-label">Cycle Time</div>
+              <div className="text-3xl font-bold text-gray-900" data-testid="stat-cycle-time">35%</div>
+              <div className="text-sm text-gray-600 font-medium" data-testid="stat-cycle-label">Cycle Time Improved</div>
             </div>
           </div>
         </div>
