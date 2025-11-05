@@ -49,16 +49,16 @@ export default function Hero() {
           
           <div className="grid grid-cols-3 gap-8">
             <div>
-              <div className="text-3xl font-bold text-gray-900" data-testid="stat-pipeline-growth">126%</div>
-              <div className="text-sm text-gray-600 font-medium" data-testid="stat-pipeline-label">Average Pipeline Growth</div>
+              <div className="text-3xl font-bold text-gray-900" data-testid="stat-revenue-growth">42%</div>
+              <div className="text-sm text-gray-600 font-medium" data-testid="stat-revenue-label">Average Revenue Growth</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900" data-testid="stat-days">90 Days</div>
-              <div className="text-sm text-gray-600 font-medium" data-testid="stat-days-label">To See Results</div>
+              <div className="text-3xl font-bold text-gray-900" data-testid="stat-sales-velocity">3.2x</div>
+              <div className="text-sm text-gray-600 font-medium" data-testid="stat-velocity-label">Sales Velocity</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900" data-testid="stat-companies">50+</div>
-              <div className="text-sm text-gray-600 font-medium" data-testid="stat-companies-label">Companies Transformed</div>
+              <div className="text-3xl font-bold text-gray-900" data-testid="stat-cycle-time">-35%</div>
+              <div className="text-sm text-gray-600 font-medium" data-testid="stat-cycle-label">Cycle Time</div>
             </div>
           </div>
         </div>
