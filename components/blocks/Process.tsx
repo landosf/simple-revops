@@ -38,13 +38,6 @@ export default function Process() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative">
           {steps.map((step, index) => (
             <div key={index} className="relative" data-testid={`card-process-${index}`}>
-              {/* Step number circle */}
-              <div className="flex justify-center mb-6">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg relative z-10" data-testid={`text-step-number-${index}`}>
-                  <span className="text-8xl font-black text-white">{step.number}</span>
-                </div>
-              </div>
-              
               {/* Content card */}
               <Card className="p-8 hover-lift bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center" data-testid={`text-step-title-${index}`}>
