@@ -89,17 +89,6 @@ export default function BookStrategyCallPage() {
           </div>
         </Section>
 
-        <Section>
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
-              <p className="text-lg text-gray-600">Choose a time that works for you.</p>
-            </div>
-            
-            <CalendlyWidget />
-          </div>
-        </Section>
-
         <Section background="gray">
           <div className="text-center mb-16">
             <Heading level={2} className="mb-4">How It Works</Heading>
