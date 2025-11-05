@@ -13,11 +13,16 @@ export default function Results() {
 
   return (
     <Section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-800 text-white" id="results">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <Heading level={2} className="mb-4 text-white">The Numbers Behind Predictable Growth</Heading>
-        <p className="text-xl text-purple-100 max-w-3xl mx-auto">Get your complimentary assessment above</p>
+        <p className="text-xl text-purple-100 max-w-3xl mx-auto mb-8">Get your complimentary assessment above</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      
+      <div className="max-w-4xl mx-auto mb-16">
+        <CalendlyWidget />
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, index) => (
           <Card 
             key={index} 
@@ -35,16 +40,6 @@ export default function Results() {
             </p>
           </Card>
         ))}
-      </div>
-      
-      <div className="max-w-4xl mx-auto mt-16">
-        <div className="text-center mb-12">
-          <Heading level={2} className="mb-4 text-white">Book Your Free Strategy Call</Heading>
-          <p className="text-lg text-purple-100">
-            Choose a time that works for you. All calls via Zoom.
-          </p>
-        </div>
-        <CalendlyWidget />
       </div>
     </Section>
   )
