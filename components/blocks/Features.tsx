@@ -24,9 +24,9 @@ export default function Features() {
   return (
     <Section className="bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="text-center mb-16">
-        <Heading level={2} className="mb-4">Why Revenue Operations Matter</Heading>
+        <Heading level={2} className="mb-4">Why RevOps with Simple</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          At Simple, we focus on fundamentals so you can scale with confidence.
+          Meniacally focused on the fundamentals to drive accountability across the revenue process.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
