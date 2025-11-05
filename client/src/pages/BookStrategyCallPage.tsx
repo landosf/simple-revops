@@ -48,7 +48,7 @@ export default function BookStrategyCallPage() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              {['100% Free', 'Actionable Insights', '30 Minutes Expert Time', 'Custom Strategy'].map((item, idx) => (
+              {['100% Value-Driven', 'Actionable Insights', '30 Minutes Expert Time', 'Custom Strategy'].map((item, idx) => (
                 <div key={idx} className="flex items-center space-x-3" data-testid={`benefit-${idx}`}>
                   <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                     <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
