@@ -41,7 +41,7 @@ export default function Navbar() {
             </Link>
             <Link href="/book-strategy-call">
               <a data-testid="button-book-call">
-                <Button variant="pulse" size="sm" className="ml-4">
+                <Button size="sm" className="ml-4">
                   Book a Strategy Call
                 </Button>
               </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
               </Link>
               <Link href="/book-strategy-call">
                 <a data-testid="button-mobile-book-call">
-                  <Button variant="pulse" size="sm" className="w-fit">
+                  <Button size="sm" className="w-fit">
                     Book a Strategy Call
                   </Button>
                 </a>
