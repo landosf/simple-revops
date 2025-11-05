@@ -34,8 +34,8 @@ export default function Hero() {
           </Heading>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">
-            Stop losing deals to misaligned processes. We help B2B companies build predictable, 
-            scalable revenue operations that drive consistent growth and eliminate inefficiencies.
+            Stop losing deals to misaligned processes. We help B2B companies build predictable 
+            revenue operations so you can scale with confidence.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
