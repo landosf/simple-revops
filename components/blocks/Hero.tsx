@@ -1,7 +1,7 @@
 import { Button } from '@/../../components/ui/button'
 import { Section } from '@/../../components/ui/section'
 import { Heading } from '@/../../components/ui/heading'
-import heroImage from '@assets/IMG_6148_1762297106937.jpeg'
+import heroImage from '@assets/screenshot-1762552149348.png'
 
 export default function Hero() {
   const scrollToAssessment = () => {
@@ -67,7 +67,7 @@ export default function Hero() {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src={typeof heroImage === 'string' ? heroImage : heroImage.src} 
-              alt="Revenue Operations Professional" 
+              alt="Revenue Operations Framework" 
               className="w-full h-full object-cover"
               data-testid="img-hero"
             />
