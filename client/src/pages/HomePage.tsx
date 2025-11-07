@@ -21,9 +21,9 @@ export default function HomePage() {
         <Results />
         <Testimonials />
         <CTA />
-        <Section padding="small">
+        <Section padding="small" className="!py-8">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
               <p className="text-lg text-gray-600">
                 choose a time to discuss where you are, where you need to go, and the path to get there.
