@@ -64,7 +64,7 @@ export default function Hero() {
         </div>
         
         <div className="relative">
-          <div className="rounded-2xl overflow-hidden">
+          <div>
             <img 
               src={typeof heroImage === 'string' ? heroImage : heroImage.src} 
               alt="Revenue Operations Framework" 
