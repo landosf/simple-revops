@@ -67,7 +67,7 @@ export default function CompanyPage() {
               </p>
               <Link href="/book-strategy-call">
                 <a>
-                  <Button size="lg" className="bg-purple-800 hover:bg-purple-900 text-white border-0" data-testid="button-work-with-us">Work With Us</Button>
+                  <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white border-0" data-testid="button-work-with-us">Work With Us</Button>
                 </a>
               </Link>
             </div>
@@ -184,7 +184,7 @@ export default function CompanyPage() {
             </p>
             <Link href="/book-strategy-call">
               <a>
-                <Button size="lg" className="bg-purple-800 hover:bg-purple-900 text-white border-0" data-testid="button-schedule-strategy">How it Works</Button>
+                <Button size="lg" className="bg-violet-600 hover:bg-violet-700 text-white border-0" data-testid="button-schedule-strategy">How it Works</Button>
               </a>
             </Link>
           </div>

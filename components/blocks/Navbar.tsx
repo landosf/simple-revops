@@ -40,7 +40,7 @@ export default function Navbar() {
               </a>
             </Link>
             <Link href="/book-strategy-call">
-              <a className="ml-4 px-4 py-2 font-medium text-white bg-purple-800 border-2 border-purple-800 rounded-md hover:bg-purple-900 hover:border-purple-900 transition-colors" data-testid="button-book-call">
+              <a className="ml-4 px-4 py-2 font-medium text-white bg-violet-600 border-2 border-violet-600 rounded-md hover:bg-violet-700 hover:border-violet-700 transition-colors" data-testid="button-book-call">
                 Book a Strategy Call
               </a>
             </Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
                 </a>
               </Link>
               <Link href="/book-strategy-call">
-                <a className="px-4 py-2 font-medium text-white bg-purple-800 border-2 border-purple-800 rounded-md hover:bg-purple-900 hover:border-purple-900 transition-colors w-fit inline-block" data-testid="button-mobile-book-call">
+                <a className="px-4 py-2 font-medium text-white bg-violet-600 border-2 border-violet-600 rounded-md hover:bg-violet-700 hover:border-violet-700 transition-colors w-fit inline-block" data-testid="button-mobile-book-call">
                   Book a Strategy Call
                 </a>
               </Link>
