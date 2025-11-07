@@ -180,11 +180,11 @@ export default function CompanyPage() {
           <div className="text-center max-w-3xl mx-auto">
             <Heading level={2} className="mb-6">Ready to Work Together?</Heading>
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how we can help transform your revenue operations.
+              Learn what you get from a strategy call
             </p>
             <Link href="/book-strategy-call">
               <a>
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border-0" data-testid="button-schedule-strategy">Schedule a Strategy Call</Button>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border-0" data-testid="button-schedule-strategy">How it Works</Button>
               </a>
             </Link>
           </div>
