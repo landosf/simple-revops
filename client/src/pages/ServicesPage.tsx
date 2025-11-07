@@ -64,8 +64,10 @@ export default function ServicesPage() {
               End-to-end revenue operations services designed to transform your business. Every solution is customized to your needs.
             </p>
             <Link href="/book-strategy-call">
-              <a className="inline-block px-8 py-4 text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-200" data-testid="button-schedule-consultation">
-                Schedule a Consultation
+              <a>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border-0" data-testid="button-schedule-consultation">
+                  Schedule a Consultation
+                </Button>
               </a>
             </Link>
           </div>
