@@ -121,22 +121,22 @@ export default function CompanyPage() {
           </div>
         </Section>
 
-        <Section>
+        <Section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-800 text-white">
           <div className="text-center mb-16">
-            <Heading level={2} className="mb-4">Our Values</Heading>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <Heading level={2} className="mb-4 text-white">Our Values</Heading>
+            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
               These principles guide everything we do.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="p-8 text-center" data-testid={`card-value-${index}`}>
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <Card key={index} className="p-8 text-center bg-white/10 backdrop-blur-sm border-white/20" data-testid={`card-value-${index}`}>
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-6">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
+                <p className="text-purple-100 leading-relaxed">{value.description}</p>
               </Card>
             ))}
           </div>
