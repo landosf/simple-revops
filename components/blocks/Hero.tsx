@@ -1,7 +1,7 @@
 import { Button } from '@/../../components/ui/button'
 import { Section } from '@/../../components/ui/section'
 import { Heading } from '@/../../components/ui/heading'
-import heroImage from '@assets/IMG_6171_1762552515187.jpeg'
+import heroImage from '@assets/IMG_6175_1762556761826.png'
 
 export default function Hero() {
   const scrollToAssessment = () => {
