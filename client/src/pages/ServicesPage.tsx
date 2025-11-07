@@ -65,7 +65,7 @@ export default function ServicesPage() {
             </p>
             <Link href="/book-strategy-call">
               <a>
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 via-purple-700 to-blue-800 hover:from-purple-700 hover:to-blue-900 text-white border-0" data-testid="button-schedule-consultation">
+                <Button size="lg" className="bg-purple-800 hover:bg-purple-900 text-white border-0" data-testid="button-schedule-consultation">
                   Schedule a Consultation
                 </Button>
               </a>
