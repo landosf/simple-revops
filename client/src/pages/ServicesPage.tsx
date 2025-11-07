@@ -122,27 +122,27 @@ export default function ServicesPage() {
           </div>
         </Section>
 
-        <Section>
+        <Section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-800 text-white">
           <div className="text-center mb-16">
-            <Heading level={2} className="mb-4">Our Methodology</Heading>
+            <Heading level={2} className="mb-4 text-white">Our Methodology</Heading>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {methodology.map((phase, index) => (
               <div key={index} className="relative" data-testid={`phase-${index}`}>
                 <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                  <div className="w-12 h-12 bg-white text-purple-700 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
                     {index + 1}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{phase.phase}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{phase.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{phase.phase}</h3>
+                  <p className="text-purple-100 text-sm leading-relaxed">{phase.description}</p>
                 </div>
                 
                 <div className="text-center">
-                  <h4 className="font-medium text-gray-900 mb-2 text-sm">Key Activities:</h4>
+                  <h4 className="font-medium text-white mb-2 text-sm">Key Activities:</h4>
                   <ul className="space-y-1">
                     {phase.activities.map((activity, idx) => (
-                      <li key={idx} className="text-gray-600 text-sm">
+                      <li key={idx} className="text-purple-100 text-sm">
                         {activity}
                       </li>
                     ))}
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                 </div>
 
                 {index < methodology.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 -right-4 w-8 h-0.5 bg-gray-200"></div>
+                  <div className="hidden lg:block absolute top-6 -right-4 w-8 h-0.5 bg-white/30"></div>
                 )}
               </div>
             ))}
