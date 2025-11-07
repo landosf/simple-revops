@@ -184,7 +184,7 @@ export default function CompanyPage() {
             </p>
             <Link href="/book-strategy-call">
               <a>
-                <Button size="lg" data-testid="button-schedule-strategy">Schedule a Strategy Call</Button>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white border-0" data-testid="button-schedule-strategy">Schedule a Strategy Call</Button>
               </a>
             </Link>
           </div>
