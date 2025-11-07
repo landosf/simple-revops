@@ -178,9 +178,9 @@ export default function CompanyPage() {
 
         <Section>
           <div className="text-center max-w-3xl mx-auto">
-            <Heading level={2} className="mb-6">Ready to Work Together?</Heading>
+            <Heading level={2} className="mb-6">Ready to Grow Revenue?</Heading>
             <p className="text-xl text-gray-600 mb-8">
-              Learn what you get from a strategy call
+              Learn what you get with a strategy call.
             </p>
             <Link href="/book-strategy-call">
               <a>
