@@ -108,7 +108,7 @@ export default function ServicesPage() {
                   </div>
                   <Link href="/book-strategy-call">
                     <a>
-                      <Button size="sm" data-testid={`button-learn-more-${index}`}>Learn More</Button>
+                      <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800 border-0" data-testid={`button-learn-more-${index}`}>Learn More</Button>
                     </a>
                   </Link>
                 </div>
