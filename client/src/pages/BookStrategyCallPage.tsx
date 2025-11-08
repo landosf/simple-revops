@@ -89,7 +89,7 @@ export default function BookStrategyCallPage() {
           </div>
         </Section>
 
-        <Section background="gray">
+        <Section background="gray" id="how-it-works">
           <div className="text-center mb-16">
             <Heading level={2} className="mb-4">How It Works</Heading>
           </div>
