@@ -32,17 +32,17 @@ export default function CompanyPage() {
   const values = [
     {
       title: "Results-Driven",
-      description: "We measure success by the tangible impact we create for our clients' businesses.",
+      description: "We measure success by the tangible impact we create for our clients' businesses, with the goal to exceed expectations through team alignment, efficient resource allocation, and data quality management.",
       icon: <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
     },
     {
       title: "Partnership Mindset",
-      description: "We work as an extension of your team, not as outside consultants.",
+      description: "We work as an extension of your team, not as outside consultants and believe in high transparency, trust, and accountability.",
       icon: <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
     },
     {
-      title: "Continuous Innovation",
-      description: "We stay ahead of industry trends and continuously evolve our methodologies.",
+      title: "Continuous Improvement",
+      description: "We continuously evolve our processes and capabilities, leveraging AI and data-driven insights to automate workflows and improve decision-making.",
       icon: <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
     }
   ]
@@ -94,16 +94,16 @@ export default function CompanyPage() {
             
             <div className="space-y-6 text-gray-600 text-lg">
               <p>
-                We founded Simple because we saw too many companies struggling with the same revenue operations challenges. 
-                Misaligned teams, fragmented processes, and disconnected systems were holding back growth everywhere.
+                Simple was started because we saw too many companies struggling with the same revenue operations challenges. 
+                Misaligned teams, fragmented processes, revenue leakage, and disconnected data & systems were holding back growth goals.
               </p>
               <p>
-                After successfully transforming revenue operations at multiple high-growth companies, we developed a systematic 
+                After successfully transforming revenue operations at multiple B2B growth companies, we developed a systematic 
                 approach that addresses root causes, not just symptoms.
               </p>
               <p>
-                Today, we work with companies of all sizes to implement strategies that have driven hundreds of millions in 
-                revenue growth. Our approach is practical, measurable, and designed for long-term success.
+                Today, we work with companies of all sizes to implement strategies that enhance revenue growth. 
+                Our approach is practical, measurable, and designed for long-term success.
               </p>
             </div>
           </div>
