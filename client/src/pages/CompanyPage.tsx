@@ -8,27 +8,6 @@ import { Button } from '../../../components/ui/button'
 import revenueMetricsImage from '@assets/IMG_6180_1762808644556.png'
 
 export default function CompanyPage() {
-  const team = [
-    {
-      name: "Alex Thompson",
-      title: "Founder & CEO",
-      bio: "15+ years building revenue operations at high-growth B2B companies. Former VP of Revenue Operations at three successful exits.",
-      expertise: ["Revenue Strategy", "Process Design", "Team Building"]
-    },
-    {
-      name: "Sarah Rodriguez",
-      title: "Head of Client Success",
-      bio: "Former Director of Sales Operations at Fortune 500 company. Expert in change management and team alignment.",
-      expertise: ["Change Management", "Training", "Client Success"]
-    },
-    {
-      name: "Michael Chen",
-      title: "Senior Revenue Analyst",
-      bio: "Data scientist turned revenue operations expert. Specializes in building analytics systems.",
-      expertise: ["Data Analytics", "Reporting", "Performance"]
-    }
-  ]
-
   const values = [
     {
       title: "Results-Driven",
@@ -124,40 +103,6 @@ export default function CompanyPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
                 <p className="text-purple-100 leading-relaxed">{value.description}</p>
-              </Card>
-            ))}
-          </div>
-        </Section>
-
-        <Section background="gray">
-          <div className="text-center mb-16">
-            <Heading level={2} className="mb-4">Meet Our Team</Heading>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Revenue operations experts with real-world experience.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="p-8 text-center" data-testid={`card-team-${index}`}>
-                <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <div className="text-primary font-medium mb-4">{member.title}</div>
-                <p className="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
-                <div>
-                  <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {member.expertise.map((skill, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </Card>
             ))}
           </div>
