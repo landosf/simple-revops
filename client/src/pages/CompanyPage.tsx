@@ -5,6 +5,7 @@ import { Section } from '../../../components/ui/section'
 import { Card } from '../../../components/ui/card'
 import { Heading } from '../../../components/ui/heading'
 import { Button } from '../../../components/ui/button'
+import revenueMetricsImage from '@assets/IMG_6180_1762808644556.png'
 
 export default function CompanyPage() {
   const team = [
@@ -71,25 +72,13 @@ export default function CompanyPage() {
               </Link>
             </div>
             
-            <div className="bg-primary/5 rounded-2xl p-8">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2" data-testid="stat-companies">50+</div>
-                  <div className="text-sm text-gray-600">Companies Transformed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2" data-testid="stat-revenue">$47M</div>
-                  <div className="text-sm text-gray-600">Revenue Impact</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2" data-testid="stat-growth">126%</div>
-                  <div className="text-sm text-gray-600">Avg Pipeline Growth</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2" data-testid="stat-satisfaction">95%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
-                </div>
-              </div>
+            <div className="flex items-center justify-center">
+              <img 
+                src={revenueMetricsImage} 
+                alt="Revenue Operations Metrics: Sales cycle time, Win rates, Pipeline Velocity, Cost of customer acquisition, ARR growth, Renewals and upsells, Customer churn, Customer lifetime value, and Forecast accuracy" 
+                className="w-full max-w-lg rounded-2xl shadow-xl"
+                data-testid="img-revenue-metrics"
+              />
             </div>
           </div>
         </Section>
