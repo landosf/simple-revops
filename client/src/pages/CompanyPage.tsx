@@ -88,14 +88,13 @@ export default function CompanyPage() {
             <div className="text-center mb-12">
               <Heading level={2} className="mb-6">Our Mission</Heading>
               <p className="text-xl text-gray-600 leading-relaxed">
-                To help B2B companies build predictable, scalable revenue operations that eliminate inefficiencies and accelerate growth.
+                To help B2B companies create predictable, scalable revenue operations that eliminate inefficiencies and accelerate growth.
               </p>
             </div>
             
             <div className="space-y-6 text-gray-600 text-lg">
               <p>
-                Simple was started because we saw too many companies struggling with the same revenue operations challenges. 
-                Misaligned teams, fragmented processes, revenue leakage, and disconnected data & systems were holding back growth goals.
+                Simple was started because we saw too many companies struggling with the same revenue operations challenges -- misaligned teams, fragmented processes, disconnected data & systems, and revenue leakage.
               </p>
               <p>
                 After successfully transforming revenue operations at multiple B2B growth companies, we developed a systematic 
