@@ -32,7 +32,7 @@ export default function CompanyPage() {
   const values = [
     {
       title: "Results-Driven",
-      description: "We measure success by the tangible impact we create for our clients' businesses, with the goal to exceed expectations through team alignment, efficient resource allocation, and data quality management.",
+      description: "We measure success by tangible impact, with the goal to exceed expectations for our clients' through goal alignment, efficient resource allocation, and data quality management.",
       icon: <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
     },
     {
