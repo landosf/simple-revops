@@ -25,7 +25,7 @@ export default function Process() {
   ]
 
   return (
-    <Section id="process" className="bg-white">
+    <Section id="process" background="gray">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4">Our Data-Driven Process</Heading>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">A framework for success starts with data quality.</p>
