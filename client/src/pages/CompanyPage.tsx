@@ -76,7 +76,7 @@ export default function CompanyPage() {
               <img 
                 src={revenueMetricsImage} 
                 alt="Revenue Operations Metrics: Sales cycle time, Win rates, Pipeline Velocity, Cost of customer acquisition, ARR growth, Renewals and upsells, Customer churn, Customer lifetime value, and Forecast accuracy" 
-                className="w-full max-w-lg rounded-2xl shadow-xl"
+                className="w-full max-w-lg rounded-2xl"
                 data-testid="img-revenue-metrics"
               />
             </div>
