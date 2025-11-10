@@ -62,8 +62,7 @@ export default function CompanyPage() {
                 We're Revenue Operations <span className="text-primary">Experts</span>
               </Heading>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Simple was founded by revenue operations leaders who have been in your shoes. 
-                We've built, scaled, and optimized revenue operations at companies from startup to enterprise.
+                Simple was founded by business leaders who have been in your shoes. We build, optimize, and scale revenue operations for startups and high-growth companies.
               </p>
               <Link href="/book-strategy-call">
                 <a>
