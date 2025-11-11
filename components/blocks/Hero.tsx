@@ -1,7 +1,7 @@
 import { Button } from '@/../../components/ui/button'
 import { Section } from '@/../../components/ui/section'
 import { Heading } from '@/../../components/ui/heading'
-import heroImage from '@assets/IMG_6177_1762558757655.jpeg'
+import heroImage from '@assets/IMG_6184_1762897388357.jpeg'
 
 export default function Hero() {
   const scrollToAssessment = () => {
@@ -67,7 +67,7 @@ export default function Hero() {
           <div>
             <img 
               src={typeof heroImage === 'string' ? heroImage : heroImage.src} 
-              alt="Revenue Operations Framework" 
+              alt="Revenue Operations Framework: Technology Stack, Metrics and KPIs, Processes and Workflows, Data Integration, Continuous Improvement, and Alignment" 
               className="w-full h-full object-cover"
               data-testid="img-hero"
             />
