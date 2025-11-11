@@ -1,6 +1,8 @@
 import { Section } from '@/../../components/ui/section'
 import { Card } from '@/../../components/ui/card'
 import { Heading } from '@/../../components/ui/heading'
+import { Button } from '@/../../components/ui/button'
+import { Link } from 'wouter'
 
 export default function Process() {
   const steps = [
@@ -65,6 +67,14 @@ export default function Process() {
             </div>
           ))}
         </div>
+      </div>
+      
+      <div className="flex justify-center mt-12">
+        <Link href="/services">
+          <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800 border-0" data-testid="button-learn-more">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </Section>
   )
