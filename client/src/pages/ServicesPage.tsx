@@ -1,4 +1,5 @@
 import { Link } from 'wouter'
+import { useEffect } from 'react'
 import Navbar from '../../../components/blocks/Navbar'
 import Footer from '../../../components/blocks/Footer'
 import { Section } from '../../../components/ui/section'
@@ -8,6 +9,9 @@ import { Button } from '../../../components/ui/button'
 import { CalendlyWidget } from '../../../components/ui/calendly-widget'
 
 export default function ServicesPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const services = [
     {
       title: "Revenue Operations Assessment",
