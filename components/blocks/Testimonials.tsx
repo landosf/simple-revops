@@ -17,10 +17,10 @@ export default function Testimonials() {
       company: "AZA Finance (Operations Nation)" 
     },
     { 
-      quote: "Systematic approach delivered real solutions that continue working.", 
-      author: "Jennifer Park", 
-      title: "Head of Sales Ops", 
-      company: "DataCore" 
+      quote: "Simple's work fundamentally improved how our revenue teams operate. They documented our end-to-end sales processes through stakeholder interviews, automated manual CRM workflows, and implemented dashboards that surface funnel health and rep productivity in real time. Their attention to detail accelerated ramp times and improved conversion visibility across every stage of the funnel. They are the definition of a true RevOps partner.", 
+      author: "Kheller Crawford", 
+      title: "Founder & CEO", 
+      company: "Otomo" 
     }
   ]
 
