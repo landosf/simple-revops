@@ -11,10 +11,10 @@ export default function Testimonials() {
       company: "Shastic" 
     },
     { 
-      quote: "ROI was immediate. 40% improvement in lead qualification within 60 days.", 
-      author: "Michael Rodriguez", 
-      title: "CRO", 
-      company: "TechFlow" 
+      quote: "Partnering with Simple transformed how our revenue engine operates day to day. They mapped every step of our GTM process — from lead routing and opportunity handoffs to forecasting and pipeline hygiene — and built a clear operating model that connected our teams around shared metrics. Their work on TAM sizing, funnel automation, and capacity planning gave us the data clarity we'd been missing. The result is a faster, more predictable business where our teams can execute with confidence.", 
+      author: "Charlene Chen", 
+      title: "COO", 
+      company: "AZA Finance (Operations Nation)" 
     },
     { 
       quote: "Systematic approach delivered real solutions that continue working.", 
