@@ -6,21 +6,21 @@ export default function Process() {
   const steps = [
     { 
       number: "1", 
-      title: "Data Assessment & Strategy", 
-      description: "Analyze current operations and create roadmap", 
-      deliverables: ["Current state analysis", "Gap identification", "Strategic roadmap"]
+      title: "Data Diagnosis & Analysis", 
+      description: "Understand current state and identify opportunities", 
+      deliverables: ["Needs assessment & top priorities", "Data collection & analysis", "Gap identification & insights"]
     },
     { 
       number: "2", 
-      title: "Implementation", 
-      description: "Work with your team to implement solutions", 
-      deliverables: ["Process optimization", "Technology setup", "Team training"]
+      title: "Strategy & Execution", 
+      description: "Build and implement tailored solutions", 
+      deliverables: ["Solution development", "Strategy & implementation", "Change management & risk mitigation"]
     },
     { 
       number: "3", 
-      title: "Measurement & Scaling", 
-      description: "Monitor and scale across organization", 
-      deliverables: ["Performance tracking", "Continuous improvement", "Scale optimization"]
+      title: "Measure & Enable", 
+      description: "Track performance and empower your team", 
+      deliverables: ["Performance tracking & forecasting", "Training & knowledge transfer", "Continuous improvement & process optimization"]
     }
   ]
 
