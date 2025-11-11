@@ -5,9 +5,9 @@ import { Heading } from '@/../../components/ui/heading'
 export default function Testimonials() {
   const testimonials = [
     { 
-      quote: "Simple transformed our revenue operations completely. Pipeline visibility improved 300%.", 
-      author: "Sarah Chen", 
-      title: "VP Revenue Ops", 
+      quote: "From our first engagement, Simple felt like part of our leadership team. They led an in-depth ICP and segmentation project that redefined our targeting strategy — resulting in a 37% increase in qualified pipeline within two weeks of campaign launch. They also overhauled our GTM tech stack, integrating CRM, GTM automation, and data enrichment tools to support scale. Simple combines strategic insight with the ability to deliver fast, tangible results.", 
+      author: "Joseariel Gomez", 
+      title: "CEO", 
       company: "Shastic" 
     },
     { 
