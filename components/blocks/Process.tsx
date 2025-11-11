@@ -9,19 +9,19 @@ export default function Process() {
     { 
       number: "1", 
       title: "Data Diagnosis & Analysis", 
-      description: "Understand current state and identify opportunities", 
+      description: "Understand business challenges and identify performance opportunities", 
       deliverables: ["Needs assessment & top priorities", "Data collection & analysis", "Gap identification & insights"]
     },
     { 
       number: "2", 
       title: "Strategy & Execution", 
-      description: "Build and implement tailored solutions", 
+      description: "Build and implement best practice solutions", 
       deliverables: ["Solution development", "Strategy & implementation", "Change management & risk mitigation"]
     },
     { 
       number: "3", 
       title: "Measure & Enable", 
-      description: "Track performance and empower your team", 
+      description: "Monitor, optimize, and scale across organization", 
       deliverables: ["Performance tracking & forecasting", "Training & knowledge transfer", "Continuous improvement & process optimization"]
     }
   ]
