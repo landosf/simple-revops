@@ -166,7 +166,7 @@ export default function ServicesPage() {
             <div className="text-center mb-12">
               <Heading level={2} className="mb-6">Ready to Get Started?</Heading>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Let's discuss your needs and create a customized plan.
+                Choose a time to discuss your goals, challenges, and to create a customized plan.
               </p>
             </div>
             <CalendlyWidget />
