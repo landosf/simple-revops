@@ -22,7 +22,7 @@ export default function Process() {
       number: "3", 
       title: "Measure & Enable", 
       description: "Monitor, optimize, and scale across organization", 
-      deliverables: ["Performance tracking & forecasting", "Training & knowledge transfer", "Continuous improvement & process optimization"]
+      deliverables: ["Performance tracking & forecasting", "Training & knowledge transfer", "Continuous improvement & optimization"]
     }
   ]
 
