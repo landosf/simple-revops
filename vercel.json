@@ -1,14 +1,13 @@
 {
-  "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "next build",
-  "devCommand": "next dev",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "outputDirectory": ".next",
-  "regions": ["iad1"],
-  "functions": {
-    "app/**/*.tsx": {
-      "runtime": "@vercel/node@18.x"
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  }
+  ]
 }
