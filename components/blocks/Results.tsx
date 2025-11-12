@@ -14,7 +14,7 @@ export default function Results() {
     <Section className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-800 text-white" id="results">
       <div className="text-center mb-16">
         <Heading level={2} className="mb-4 text-white">The Numbers Behind Predictable Growth</Heading>
-        <p className="text-xl text-purple-100 max-w-3xl mx-auto">See what's possible when you build revenue operations on data, not guesswork</p>
+        <p className="text-xl text-purple-100 max-w-3xl mx-auto">See what's possible when you build revenue operations on data, not guesswork.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, index) => (

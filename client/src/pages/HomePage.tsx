@@ -53,7 +53,7 @@ export default function HomePage() {
             <div className="text-center mb-8">
               <Heading level={2} className="mb-4">Book Your Strategy Call</Heading>
               <p className="text-lg text-gray-600">
-                choose a time to discuss where you are, where you need to go, and the path to get there.
+                Let's discuss where you are, where you need to go, and the path to get there.
               </p>
             </div>
             <CalendlyWidget />
