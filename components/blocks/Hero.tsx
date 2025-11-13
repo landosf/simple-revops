@@ -39,7 +39,7 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button size="lg" className="bg-blue-900 hover:bg-blue-950 text-white border-0" onClick={scrollToAssessment} data-testid="button-get-assessment">
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white border-0" onClick={scrollToAssessment} data-testid="button-get-assessment">
               Get Your Assessment
             </Button>
             <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800 border-0" onClick={scrollToProcess} data-testid="button-learn-process">
