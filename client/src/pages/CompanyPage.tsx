@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'wouter'
 import Navbar from '../../../components/blocks/Navbar'
 import Footer from '../../../components/blocks/Footer'
@@ -8,6 +9,10 @@ import { Button } from '../../../components/ui/button'
 import revenueMetricsImage from '@assets/IMG_6180_1762808644556.png'
 
 export default function CompanyPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const values = [
     {
       title: "Results-Driven",

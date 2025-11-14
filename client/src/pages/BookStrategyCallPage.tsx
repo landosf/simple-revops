@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Navbar from '../../../components/blocks/Navbar'
 import Footer from '../../../components/blocks/Footer'
 import { Section } from '../../../components/ui/section'
@@ -7,6 +8,10 @@ import { Button } from '../../../components/ui/button'
 import { CalendlyWidget } from '../../../components/ui/calendly-widget'
 
 export default function BookStrategyCallPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const benefits = [
     { title: "Revenue Operations Assessment", description: "Analyze your operations and identify opportunities.", icon: "🔍" },
     { title: "Custom Growth Strategy", description: "Get a personalized roadmap for your situation.", icon: "🎯" },

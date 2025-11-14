@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Navbar from "../../../components/blocks/Navbar";
 import Hero from "../../../components/blocks/Hero";
 import Features from "../../../components/blocks/Features";
@@ -12,6 +13,10 @@ import { CalendlyWidget } from "../../../components/ui/calendly-widget";
 import dataQualityImage from '@assets/IMG_6179_1762560235232.jpeg';
 
 export default function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen">
       <Navbar />
