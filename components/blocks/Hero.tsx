@@ -29,13 +29,11 @@ export default function Hero() {
           </div>
           
           <Heading level={1} className="mb-6">
-            Transform Your Revenue Operations Into a 
-            <span className="text-primary"> Growth Engine</span>
+            RevOps for <span className="text-primary">High-Growth B2B Teams</span>
           </Heading>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">
-            Stop losing deals to misaligned processes. We help B2B companies build predictable 
-            revenue operations so you can grow with confidence.
+            Building frameworks for predictable, scalable revenue operations so you can grow with confidence.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
