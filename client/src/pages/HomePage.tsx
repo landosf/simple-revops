@@ -27,7 +27,7 @@ export default function HomePage() {
         <Section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <Heading level={2} className="mb-4">The Foundation of Every Great Decision: <span className="text-primary">Data You Can Trust</span></Heading>
+              <Heading level={2} className="mb-4">The Foundation of Every Great Decision:<br /><span className="text-primary">Data You Can Trust</span></Heading>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Your revenue strategy is only as good as the data behind it. We build systems on six critical pillars that transform raw data into reliable intelligence.
               </p>
