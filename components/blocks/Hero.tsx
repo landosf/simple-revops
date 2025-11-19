@@ -29,7 +29,7 @@ export default function Hero() {
           </div>
           
           <Heading level={1} className="mb-6">
-            Revenue Solutions for <span className="text-primary">High-Growth Teams</span>
+            Actual Solutions for <span className="text-primary">High-Growth Revenue Teams</span>
           </Heading>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">
