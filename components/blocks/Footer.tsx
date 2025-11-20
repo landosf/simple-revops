@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">team@simplerevenue.io</li>
+              <li className="text-gray-400">hello@simplerevenue.io 👋</li>
               <li className="text-gray-400">+1 650-485-1632</li>
             </ul>
           </div>
