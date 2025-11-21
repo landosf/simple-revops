@@ -33,7 +33,7 @@ export default function Hero() {
           </Heading>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-testid="text-hero-description">
-            Powering predictable, scalable revenue operations so you can grow with confidence.
+            Partnering with B2B startups to power your revenue infrastructure for predictable growth.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
