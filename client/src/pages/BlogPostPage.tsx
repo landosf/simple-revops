@@ -1,11 +1,11 @@
-import { useRoute } from 'wouter'
+import { Link, useRoute } from 'wouter'
 import { useQuery } from '@tanstack/react-query'
-import Navbar from '../../components/blocks/Navbar'
-import Footer from '../../components/blocks/Footer'
-import { Section } from '../../components/ui/section'
-import { Heading } from '../../components/ui/heading'
-import { NotionPage } from '../../components/NotionPage'
-import { getPostBySlug, getNotionPage } from '../../lib/notion-api'
+import Navbar from '../../../components/blocks/Navbar'
+import Footer from '../../../components/blocks/Footer'
+import { Section } from '../../../components/ui/section'
+import { Heading } from '../../../components/ui/heading'
+import { NotionPage } from '../../../components/NotionPage'
+import { getPostBySlug, getNotionPage } from '../../../lib/notion-api'
 import { useEffect } from 'react'
 
 export default function BlogPostPage() {
@@ -34,58 +34,95 @@ export default function BlogPostPage() {
     <main className="min-h-screen">
       <Navbar />
       
-      <article className="pt-20 lg:pt-24 pb-16">
-        <Section>
-          <div className="max-w-3xl mx-auto">
-            {isLoading && (
-              <div className="text-center py-20">
-                <p className="text-gray-600">Loading post...</p>
-              </div>
-            )}
+      <Section className="pt-20 lg:pt-24">
+        <div className="max-w-4xl mx-auto">
+          <Link href="/blog">
+            <a className="inline-flex items-center text-primary hover:text-primary/80 font-medium mb-8">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Blog
+            </a>
+          </Link>
 
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
-                <p className="text-red-800">
-                  <strong>Error:</strong> {error instanceof Error ? error.message : 'Unknown error'}
-                </p>
-              </div>
-            )}
+          {isLoading && (
+            <div className="text-center py-20">
+              <p className="text-gray-600">Loading post...</p>
+            </div>
+          )}
 
-            {post && !isLoading && (
-              <>
-                <div className="mb-8">
-                  <div className="text-sm text-gray-500 mb-4">
-                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })} • By {post.author}
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+              <p className="text-red-800">
+                <strong>Error:</strong> {error instanceof Error ? error.message : 'Unknown error'}
+              </p>
+            </div>
+          )}
+
+          {post && !isLoading && (
+            <article>
+              <header className="mb-12">
+                <Heading level={1} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  {post.title}
+                </Heading>
+                
+                <div className="flex items-center space-x-6 text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>{post.author}</span>
                   </div>
-                  <Heading level={1} className="mb-6">
-                    {post.title}
-                  </Heading>
-                  {post.tags && post.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {post.tags.map((tag, idx) => (
-                        <span 
-                          key={idx}
-                          className="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>
+                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="prose prose-lg max-w-none">
-                  {recordMap && <NotionPage recordMap={recordMap} />}
-                </div>
-              </>
-            )}
+                {post.tags && post.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {post.tags.map((tag, idx) => (
+                      <span 
+                        key={idx}
+                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </header>
+
+              <div className="notion-content">
+                {recordMap && <NotionPage recordMap={recordMap} />}
+              </div>
+            </article>
+          )}
+
+          <div className="mt-16 pt-8 border-t border-gray-200 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Want to optimize your revenue operations?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Schedule a free strategy session to discuss your specific challenges.
+            </p>
+            <Link href="/book-strategy-call">
+              <a className="inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all">
+                Book a Strategy Call
+              </a>
+            </Link>
           </div>
-        </Section>
-      </article>
+        </div>
+      </Section>
 
       <Footer />
     </main>
