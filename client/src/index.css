@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Notion Blog Styles */
+@import 'react-notion-x/src/styles.css';
+@import 'prismjs/themes/prism-tomorrow.css';
+@import 'katex/dist/katex.min.css';
+
+/* Custom Notion Overrides */
+.notion-page {
+  padding: 0;
+  width: 100%;
+}
+
+.notion-title {
+  display: none;
+}
+
+.notion-text {
+  padding: 0.25em 0;
+}
+
+.notion-h1,
+.notion-h2,
+.notion-h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #111827;
+}
+
+.notion-page a {
+  color: #2563eb;
+}
+
+.notion-page a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.notion-callout {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.notion-callout-text {
+  width: 100%;
+}
+
+.notion-code {
+  border-radius: 0.375rem;
+}
+
 :root {
   --background: hsl(0 0% 98%);
   --foreground: hsl(222 47% 11%);
