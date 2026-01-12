@@ -39,6 +39,11 @@ export default function Navbar() {
                 Company
               </a>
             </Link>
+            <Link href="/blog">
+              <a className="text-gray-700 hover:text-primary font-medium transition-colors" data-testid="link-blog">
+                Blog
+              </a>
+            </Link>
             <Link href="/book-strategy-call">
               <a className="ml-4 px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors" data-testid="button-book-call">
                 Book a Strategy Call
@@ -68,6 +73,11 @@ export default function Navbar() {
               <Link href="/company">
                 <a className="text-gray-700 hover:text-primary font-medium" data-testid="link-mobile-company">
                   Company
+                </a>
+              </Link>
+              <Link href="/blog">
+                <a className="text-gray-700 hover:text-primary font-medium" data-testid="link-mobile-blog">
+                  Blog
                 </a>
               </Link>
               <Link href="/book-strategy-call">
