@@ -18,13 +18,27 @@ export default function BlogPostPage() {
 
   const { data: post, isLoading: isLoadingPost } = useQuery({
     queryKey: ['/api/blog/post', slug],
-    queryFn: () => getPostBySlug(slug!),
+    queryFn: async () => {
+      const response = await fetch(`/api/blog/post/${slug}`);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch post');
+      }
+      return response.json();
+    },
     enabled: !!slug
   })
 
   const { data: recordMap, isLoading: isLoadingContent, error } = useQuery({
     queryKey: ['/api/blog/content', post?.id],
-    queryFn: () => getNotionPage(post!.id),
+    queryFn: async () => {
+      const response = await fetch(`/api/blog/content/${post?.id}`);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch content');
+      }
+      return response.json();
+    },
     enabled: !!post?.id
   })
 

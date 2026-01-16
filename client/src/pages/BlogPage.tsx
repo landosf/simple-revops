@@ -15,7 +15,14 @@ export default function BlogPage() {
 
   const { data: posts = [], isLoading, error } = useQuery({
     queryKey: ['/api/blog/posts'],
-    queryFn: () => getAllPosts()
+    queryFn: async () => {
+      const response = await fetch('/api/blog/posts');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch posts');
+      }
+      return response.json();
+    }
   })
 
   return (
