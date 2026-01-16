@@ -1,11 +1,11 @@
 import { Link } from 'wouter'
 import { useQuery } from '@tanstack/react-query'
-import Navbar from '../../components/blocks/Navbar'
-import Footer from '../../components/blocks/Footer'
-import { Section } from '../../components/ui/section'
-import { Card } from '../../components/ui/card'
-import { Heading } from '../../components/ui/heading'
-import { getAllPosts } from '../../lib/notion-api'
+import Navbar from '@/../../components/blocks/Navbar'
+import Footer from '@/../../components/blocks/Footer'
+import { Section } from '@/../../components/ui/section'
+import { Card } from '@/../../components/ui/card'
+import { Heading } from '@/../../components/ui/heading'
+import { getAllPosts } from '@/../../lib/notion-api'
 import { useEffect } from 'react'
 
 export default function BlogPage() {

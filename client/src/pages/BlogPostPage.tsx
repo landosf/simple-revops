@@ -1,11 +1,11 @@
 import { Link, useRoute } from 'wouter'
 import { useQuery } from '@tanstack/react-query'
-import Navbar from '../../../components/blocks/Navbar'
-import Footer from '../../../components/blocks/Footer'
-import { Section } from '../../../components/ui/section'
-import { Heading } from '../../../components/ui/heading'
-import { NotionPage } from '../../../components/NotionPage'
-import { getPostBySlug, getNotionPage } from '../../../lib/notion-api'
+import Navbar from '@/../../components/blocks/Navbar'
+import Footer from '@/../../components/blocks/Footer'
+import { Section } from '@/../../components/ui/section'
+import { Heading } from '@/../../components/ui/heading'
+import { NotionPage } from '@/../../components/NotionPage'
+import { getPostBySlug, getNotionPage } from '@/../../lib/notion-api'
 import { useEffect } from 'react'
 
 export default function BlogPostPage() {
