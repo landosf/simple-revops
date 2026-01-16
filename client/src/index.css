@@ -1,11 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Notion Blog Styles */
 @import 'react-notion-x/src/styles.css';
 @import 'prismjs/themes/prism-tomorrow.css';
 @import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom Notion Overrides */
 .notion-page {
