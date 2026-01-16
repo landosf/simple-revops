@@ -8,9 +8,9 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  rootNotionPageId: (import.meta as any).env.VITE_NOTION_PAGE_ID || '',
+  rootNotionPageId: (typeof process !== 'undefined' ? process.env.VITE_NOTION_PAGE_ID : (import.meta as any).env.VITE_NOTION_PAGE_ID) || '',
   name: 'Simple',
-  domain: (import.meta as any).env.VITE_SITE_URL || 'https://simplerevenue.io',
+  domain: (typeof process !== 'undefined' ? process.env.VITE_SITE_URL : (import.meta as any).env.VITE_SITE_URL) || 'https://simplerevenue.io',
   author: 'Simple Team',
   description: 'Revenue Operations Excellence',
   dateFormat: 'MMMM DD, YYYY',
