@@ -14,7 +14,7 @@ export async function getAllPosts(): Promise<NotionPost[]> {
   const rootPageId = siteConfig.rootNotionPageId
   
   if (!rootPageId) {
-    throw new Error('NOTION_PAGE_ID not configured in environment variables')
+    throw new Error('NOTION_PAGE_ID not configured')
   }
   
   const recordMap = await getNotionPage(rootPageId)

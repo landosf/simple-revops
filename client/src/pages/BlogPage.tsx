@@ -49,9 +49,6 @@ export default function BlogPage() {
             <p className="text-red-800">
               <strong>Error:</strong> {error instanceof Error ? error.message : 'Unknown error'}
             </p>
-            <p className="text-red-600 text-sm mt-2">
-              Check VITE_NOTION_PAGE_ID in your environment variables.
-            </p>
           </div>
         )}
 
