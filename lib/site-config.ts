@@ -8,7 +8,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  rootNotionPageId: '2e6ce325786580dca80fe35fa1a9e7ff',
+  // Use the ID with dashes which is more compatible with the Notion API
+  rootNotionPageId: '2e6ce325-7865-80dc-a80f-e35fa1a9e7ff',
   name: 'Simple',
   domain: 'https://simplerevenue.io',
   author: 'Simple Team',

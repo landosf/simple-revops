@@ -5,7 +5,6 @@ import Footer from '@/../../components/blocks/Footer'
 import { Section } from '@/../../components/ui/section'
 import { Heading } from '@/../../components/ui/heading'
 import { NotionPage } from '@/../../components/NotionPage'
-import { getPostBySlug, getNotionPage } from '@/../../lib/notion-api'
 import { useEffect } from 'react'
 
 export default function BlogPostPage() {
@@ -93,18 +92,21 @@ export default function BlogPostPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <span>
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
+                      {(() => {
+                        const date = new Date(post.publishedAt);
+                        return isNaN(date.getTime()) ? 'Recently published' : date.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        });
+                      })()}
                     </span>
                   </div>
                 </div>
 
                 {post.tags && post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-6">
-                    {post.tags.map((tag, idx) => (
+                    {post.tags.map((tag: string, idx: number) => (
                       <span 
                         key={idx}
                         className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"

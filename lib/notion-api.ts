@@ -7,53 +7,82 @@ import { NotionPost } from './notion-types'
 const notion = new NotionAPI()
 
 export async function getNotionPage(pageId: string): Promise<ExtendedRecordMap> {
-  return await notion.getPage(pageId)
+  const id = pageId.includes('-') ? pageId : `${pageId.slice(0, 8)}-${pageId.slice(8, 12)}-${pageId.slice(12, 16)}-${pageId.slice(16, 20)}-${pageId.slice(20)}`
+  return await notion.getPage(id)
 }
 
 export async function getAllPosts(): Promise<NotionPost[]> {
   const rootPageId = siteConfig.rootNotionPageId
-  
-  if (!rootPageId) {
-    throw new Error('NOTION_PAGE_ID not configured')
-  }
+  if (!rootPageId) throw new Error('NOTION_PAGE_ID not configured')
   
   const recordMap = await getNotionPage(rootPageId)
+  if (!recordMap.block) return []
   
-  // Extract posts from collection
-  const collection = Object.values(recordMap.collection || {})[0]?.value
-  const collectionView = Object.values(recordMap.collection_view || {})[0]?.value
-  const collectionQuery = recordMap.collection_query?.[collection?.id]?.[collectionView?.id]
+  const collectionId = Object.keys(recordMap.collection || {})[0]
+  const collectionViewId = Object.keys(recordMap.collection_view || {})[0]
   
-  if (!collectionQuery) {
-    return []
+  let pageIds: string[] = []
+
+  if (collectionId && collectionViewId) {
+    const collectionQuery = recordMap.collection_query?.[collectionId]?.[collectionViewId]
+    if (collectionQuery?.blockIds) {
+      pageIds = collectionQuery.blockIds
+    }
   }
-  
-  const pageIds: string[] = collectionQuery.blockIds || []
-  
+
+  if (pageIds.length === 0) {
+    pageIds = Object.keys(recordMap.block).filter(id => {
+      const block = recordMap.block[id].value
+      if (!block) return false
+      const cleanId = id.replace(/-/g, '')
+      const cleanRootId = rootPageId.replace(/-/g, '')
+      return (block.type === 'page' || block.type === 'collection_view_page') && cleanId !== cleanRootId
+    })
+  }
+
   const posts = pageIds
     .map((pageId): NotionPost | null => {
       const block = recordMap.block[pageId]?.value
       if (!block) return null
       
       const title = getPageTitle(recordMap, pageId)
-      const slug = getPageProperty<string>('Slug', block, recordMap) || pageId
-      const published = getPageProperty<string>('Published', block, recordMap)
-      const excerpt = getPageProperty<string>('Excerpt', block, recordMap) || ''
-      const author = getPageProperty<string>('Author', block, recordMap) || siteConfig.author
-      const tags = getPageProperty<string[]>('Tags', block, recordMap) || []
+      if (!title || title === 'Untitled') return null
+
+      const properties = (block as any).properties || {}
+      
+      let slug = ''
+      try { slug = getPageProperty<string>('Slug', block, recordMap) } catch (e) {}
+      if (!slug && properties.Slug) slug = properties.Slug[0]?.[0]
+      slug = slug || pageId
+
+      let published = ''
+      try { published = getPageProperty<string>('Published', block, recordMap) } catch (e) {}
+      if (!published && properties.Published) {
+        const dateProp = properties.Published[0]
+        if (dateProp?.[1]?.[0]?.[1]?.start_date) published = dateProp[1][0][1].start_date
+      }
+
+      // Final fallback for date to avoid "Invalid Date"
+      let publishedAt = new Date().toISOString()
+      if (published) {
+        const d = new Date(published)
+        if (!isNaN(d.getTime())) publishedAt = d.toISOString()
+      }
+
+      const excerpt = properties.Excerpt?.[0]?.[0] || ''
+      const author = siteConfig.author
       
       return {
         id: pageId,
-        title: title || 'Untitled',
+        title,
         slug,
-        publishedAt: published || new Date().toISOString(),
+        publishedAt,
         excerpt,
         author,
-        tags,
+        tags: [],
       }
     })
     .filter((post): post is NotionPost => post !== null)
-    .filter((post) => post.publishedAt)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   
   return posts

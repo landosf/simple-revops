@@ -5,7 +5,6 @@ import Footer from '@/../../components/blocks/Footer'
 import { Section } from '@/../../components/ui/section'
 import { Card } from '@/../../components/ui/card'
 import { Heading } from '@/../../components/ui/heading'
-import { getAllPosts } from '@/../../lib/notion-api'
 import { useEffect } from 'react'
 
 export default function BlogPage() {
@@ -16,12 +15,17 @@ export default function BlogPage() {
   const { data: posts = [], isLoading, error } = useQuery({
     queryKey: ['/api/blog/posts'],
     queryFn: async () => {
-      const response = await fetch('/api/blog/posts');
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to fetch posts');
+      try {
+        const response = await fetch('/api/blog/posts');
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch posts');
+        }
+        return response.json();
+      } catch (e: any) {
+        console.error('Fetch error:', e);
+        throw e;
       }
-      return response.json();
     }
   })
 
@@ -66,17 +70,20 @@ export default function BlogPage() {
 
         {posts.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {posts.map((post: any) => (
               <Link key={post.id} href={`/blog/${post.slug}`}>
                 <a className="block h-full">
                   <Card className="p-6 h-full hover:shadow-lg transition-shadow cursor-pointer">
                     <div className="mb-4">
                       <div className="text-sm text-gray-500 mb-2">
-                        {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
+                        {(() => {
+                          const date = new Date(post.publishedAt);
+                          return isNaN(date.getTime()) ? 'Recently published' : date.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          });
+                        })()}
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                         {post.title}
@@ -99,7 +106,7 @@ export default function BlogPage() {
                     
                     {post.tags && post.tags.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-4">
-                        {post.tags.slice(0, 3).map((tag, idx) => (
+                        {post.tags.slice(0, 3).map((tag: string, idx: number) => (
                           <span 
                             key={idx}
                             className="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-medium"
