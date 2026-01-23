@@ -23,46 +23,46 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
-            <a
-              className="text-2xl font-bold text-gray-900"
+            <span
+              className="text-2xl font-bold text-gray-900 cursor-pointer"
               data-testid="link-logo"
             >
               Simple
-            </a>
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/services">
-              <a
-                className="text-gray-700 hover:text-primary font-medium transition-colors"
+              <span
+                className="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer"
                 data-testid="link-services"
               >
                 Services
-              </a>
+              </span>
             </Link>
             <Link href="/company">
-              <a
-                className="text-gray-700 hover:text-primary font-medium transition-colors"
+              <span
+                className="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer"
                 data-testid="link-company"
               >
                 Company
-              </a>
+              </span>
             </Link>
             <Link href="/blog">
-              <a
-                className="text-gray-700 hover:text-primary font-medium transition-colors"
+              <span
+                className="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer"
                 data-testid="link-blog"
               >
                 Blog
-              </a>
+              </span>
             </Link>
             <Link href="/book-strategy-call">
-              <a
-                className="ml-4 px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors"
+              <span
+                className="ml-4 px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors cursor-pointer"
                 data-testid="button-book-call"
               >
                 Book a Strategy Call
-              </a>
+              </span>
             </Link>
           </div>
 
@@ -91,36 +91,36 @@ export default function Navbar() {
           <div className="md:hidden py-4 border-t border-gray-100">
             <div className="flex flex-col space-y-4">
               <Link href="/services">
-                <a
-                  className="text-gray-700 hover:text-primary font-medium"
+                <span
+                  className="text-gray-700 hover:text-primary font-medium cursor-pointer"
                   data-testid="link-mobile-services"
                 >
                   Services
-                </a>
+                </span>
               </Link>
               <Link href="/company">
-                <a
-                  className="text-gray-700 hover:text-primary font-medium"
+                <span
+                  className="text-gray-700 hover:text-primary font-medium cursor-pointer"
                   data-testid="link-mobile-company"
                 >
                   Company
-                </a>
+                </span>
               </Link>
               <Link href="/blog">
-                <a
-                  className="text-gray-700 hover:text-primary font-medium"
+                <span
+                  className="text-gray-700 hover:text-primary font-medium cursor-pointer"
                   data-testid="link-mobile-blog"
                 >
                   Blog
-                </a>
+                </span>
               </Link>
               <Link href="/book-strategy-call">
-                <a
-                  className="px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors w-fit inline-block"
+                <span
+                  className="px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors w-fit inline-block cursor-pointer"
                   data-testid="button-mobile-book-call"
                 >
                   Book a Strategy Call
-                </a>
+                </span>
               </Link>
             </div>
           </div>
