@@ -7,33 +7,11 @@ export interface SiteConfig {
   dateFormat: string
 }
 
-// Normalize Notion ID - handles URLs, IDs with/without dashes
-function normalizeNotionId(id: string): string {
-  console.log("normalizeNotionId input:", id)
-  // If it's a URL, extract the ID from it
-  if (id.includes('notion.so')) {
-    const match = id.match(/([a-f0-9]{32}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
-    if (match) {
-      id = match[0];
-    }
-  }
-  // Remove dashes and convert to lowercase
-  const normalized = id.replace(/-/g, '').toLowerCase();
-  console.log("normalizeNotionId output:", normalized)
-  return normalized;
-}
-
-const rawPageId = (typeof process !== 'undefined' ? process.env.VITE_NOTION_PAGE_ID : (import.meta as any).env.VITE_NOTION_PAGE_ID) || '2e6ce325786580dca80fe35fa1a9e7ff';
-
-console.log("Raw page ID from env:", rawPageId)
-
 export const siteConfig: SiteConfig = {
-  rootNotionPageId: normalizeNotionId(rawPageId),
+  rootNotionPageId: '2e6ce325786580dca80fe35fa1a9e7ff', // Hardcoded for testing
   name: 'Simple',
-  domain: (typeof process !== 'undefined' ? process.env.VITE_SITE_URL : (import.meta as any).env.VITE_SITE_URL) || 'https://simplerevenue.io',
+  domain: 'https://simplerevenue.io',
   author: 'Simple Team',
   description: 'Revenue Operations Excellence',
   dateFormat: 'MMMM DD, YYYY',
 }
-
-console.log("Final rootNotionPageId:", siteConfig.rootNotionPageId)
