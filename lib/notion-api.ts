@@ -7,18 +7,35 @@ import { NotionPost } from './notion-types'
 const notion = new NotionAPI()
 
 export async function getNotionPage(pageId: string): Promise<ExtendedRecordMap> {
+  console.log("=== getNotionPage called ===")
+  console.log("Input pageId:", pageId)
+  console.log("pageId length:", pageId.length)
+  console.log("pageId has dashes:", pageId.includes('-'))
+
   const id = pageId.includes('-') ? pageId : `${pageId.slice(0, 8)}-${pageId.slice(8, 12)}-${pageId.slice(12, 16)}-${pageId.slice(16, 20)}-${pageId.slice(20)}`
 
+  console.log("Formatted ID to use:", id)
+  console.log("Formatted ID length:", id.length)
+
   try {
-    return await notion.getPage(id)
+    const result = await notion.getPage(id)
+    console.log("Successfully fetched page")
+    return result
   } catch (error) {
     console.error("Error fetching Notion page:", error)
+    if (error instanceof Error) {
+      console.error("Error message:", error.message)
+      console.error("Error stack:", error.stack)
+    }
     throw error
   }
 }
 
 export async function getAllPosts(): Promise<NotionPost[]> {
+  console.log("=== getAllPosts called ===")
   const rootPageId = siteConfig.rootNotionPageId
+  console.log("rootPageId from config:", rootPageId)
+  console.log("rootPageId type:", typeof rootPageId)
 
   if (!rootPageId) throw new Error('NOTION_PAGE_ID not configured')
 
@@ -47,6 +64,8 @@ export async function getAllPosts(): Promise<NotionPost[]> {
     })
   }
 
+  console.log("Found pageIds:", pageIds.length)
+
   const posts = pageIds
     .map((pageId): NotionPost | null => {
       const block = recordMap.block[pageId]?.value
@@ -69,6 +88,7 @@ export async function getAllPosts(): Promise<NotionPost[]> {
         if (dateProp?.[1]?.[0]?.[1]?.start_date) published = dateProp[1][0][1].start_date
       }
 
+      // Final fallback for date to avoid "Invalid Date"
       let publishedAt = new Date().toISOString()
       if (published) {
         const d = new Date(published)
@@ -91,6 +111,7 @@ export async function getAllPosts(): Promise<NotionPost[]> {
     .filter((post): post is NotionPost => post !== null)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
 
+  console.log("Returning posts:", posts.length)
   return posts
 }
 
