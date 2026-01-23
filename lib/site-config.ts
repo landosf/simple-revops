@@ -8,7 +8,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  rootNotionPageId: '2e6ce325786580dca80fe35fa1a9e7ff', // Hardcoded for testing
+  rootNotionPageId: '2f1ce3257865805c94d7cff890d94236', // Hardcoded for testing
   name: 'Simple',
   domain: 'https://simplerevenue.io',
   author: 'Simple Team',
