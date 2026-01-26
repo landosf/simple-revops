@@ -69,7 +69,7 @@ export async function getAllPosts(): Promise<NotionPost[]> {
           const block = recordMap.block[pageId]?.value
           if (!block) return null
 
-          const rawTitle = getPageTitle(recordMap, pageId)
+          const rawTitle = getPageTitle(recordMap)
           const title = sanitizeText(rawTitle)
           if (!title || title === 'Untitled') return null
 
