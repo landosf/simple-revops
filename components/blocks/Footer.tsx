@@ -17,22 +17,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/">
-                  <a className="text-gray-400 hover:text-white" data-testid="link-footer-home">Home</a>
+                  <span className="text-gray-400 hover:text-white cursor-pointer" data-testid="link-footer-home">Home</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services">
-                  <a className="text-gray-400 hover:text-white" data-testid="link-footer-services">Services</a>
+                  <span className="text-gray-400 hover:text-white cursor-pointer" data-testid="link-footer-services">Services</span>
                 </Link>
               </li>
               <li>
                 <Link href="/company">
-                  <a className="text-gray-400 hover:text-white" data-testid="link-footer-company">Company</a>
+                  <span className="text-gray-400 hover:text-white cursor-pointer" data-testid="link-footer-company">Company</span>
                 </Link>
               </li>
               <li>
                 <Link href="/book-strategy-call">
-                  <a className="text-gray-400 hover:text-white" data-testid="link-footer-book-call">Book a Strategy Call</a>
+                  <span className="text-gray-400 hover:text-white cursor-pointer" data-testid="link-footer-book-call">Book a Strategy Call</span>
                 </Link>
               </li>
             </ul>
@@ -50,10 +50,10 @@ export default function Footer() {
             <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Simple, LLC. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="/privacy">
-                <a className="text-gray-400 hover:text-white text-sm" data-testid="link-footer-privacy">Privacy Policy</a>
+                <span className="text-gray-400 hover:text-white text-sm cursor-pointer" data-testid="link-footer-privacy">Privacy Policy</span>
               </Link>
               <Link href="/terms">
-                <a className="text-gray-400 hover:text-white text-sm" data-testid="link-footer-terms">Terms of Use</a>
+                <span className="text-gray-400 hover:text-white text-sm cursor-pointer" data-testid="link-footer-terms">Terms of Use</span>
               </Link>
             </div>
           </div>
