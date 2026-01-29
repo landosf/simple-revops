@@ -20,7 +20,7 @@ function normalizeNotionId(id: string): string {
   return id.replace(/-/g, '').toLowerCase();
 }
 
-const rawPageId = (typeof process !== 'undefined' ? process.env.VITE_NOTION_PAGE_ID : (import.meta as any).env.VITE_NOTION_PAGE_ID) || '2f1ce3257865805c94d7cff890d94236';
+const rawPageId = (typeof process !== 'undefined' ? process.env.VITE_NOTION_PAGE_ID : (import.meta as any).env.VITE_NOTION_PAGE_ID) || '239d9ea9eab6443d87147a1f591b138d';
 
 if (!rawPageId) {
   console.error('VITE_NOTION_PAGE_ID is not set in environment variables');
