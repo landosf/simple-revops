@@ -48,14 +48,6 @@ export default function Navbar() {
                 Company
               </span>
             </Link>
-            <Link href="/blog">
-              <span
-                className="text-gray-700 hover:text-primary font-medium transition-colors cursor-pointer"
-                data-testid="link-blog"
-              >
-                Blog
-              </span>
-            </Link>
             <Link href="/book-strategy-call">
               <span
                 className="ml-4 px-4 py-2 font-medium text-white bg-purple-600 border-2 border-purple-600 rounded-md hover:bg-purple-700 hover:border-purple-700 transition-colors cursor-pointer"
@@ -104,14 +96,6 @@ export default function Navbar() {
                   data-testid="link-mobile-company"
                 >
                   Company
-                </span>
-              </Link>
-              <Link href="/blog">
-                <span
-                  className="text-gray-700 hover:text-primary font-medium cursor-pointer"
-                  data-testid="link-mobile-blog"
-                >
-                  Blog
                 </span>
               </Link>
               <Link href="/book-strategy-call">
